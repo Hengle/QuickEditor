@@ -1,9 +1,9 @@
-﻿using QuickEditor.Common;
-using UnityEditor;
-using UnityEngine;
-
-namespace QuickEditor.Toolkit
+﻿namespace QuickEditor.Toolkit
 {
+    using QuickEditor.Common;
+    using UnityEditor;
+    using UnityEngine;
+
     public abstract class AbstractImportSetting
     {
         //GUI settings

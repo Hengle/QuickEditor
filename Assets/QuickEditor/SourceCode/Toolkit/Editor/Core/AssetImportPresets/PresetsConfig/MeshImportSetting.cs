@@ -1,9 +1,9 @@
-﻿using UnityEngine;
-using UnityEditor;
-using QuickEditor.Common;
-
-namespace QuickEditor.Toolkit
+﻿namespace QuickEditor.Toolkit
 {
+    using QuickEditor.Common;
+    using UnityEditor;
+    using UnityEngine;
+
     [System.Serializable]
     public class MeshImportSetting : AbstractImportSetting
     {

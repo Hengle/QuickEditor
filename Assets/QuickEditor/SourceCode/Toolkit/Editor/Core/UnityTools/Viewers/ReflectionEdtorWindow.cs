@@ -86,7 +86,7 @@ public class ReflectionEdtorWindow : EditorWindow
 
         if (m_status == WindowStatus.AppDomain)
         {
-            content += "应用程序视图：";
+            content += "<color=black>" + "应用程序视图：" + "</color> ";
             content += AppDomain.CurrentDomain.FriendlyName;
         }
         else if (m_status == WindowStatus.Assembly)
@@ -121,7 +121,7 @@ public class ReflectionEdtorWindow : EditorWindow
             content += "方法详细视图：" + m_currentClass.FullName + " " + m_currentMethod.Name;
         }
 
-        GUILayout.Label(content, "PreLabel");
+        GUILayout.Label(content, EditorGUIStyleData.RichText);
 
         GUILayout.BeginHorizontal();
 

@@ -1,10 +1,9 @@
-﻿using UnityEngine;
-using UnityEditor;
-using QuickEditor.Common;
-using System.IO;
-
-namespace QuickEditor.Toolkit
+﻿namespace QuickEditor.Toolkit
 {
+    using System.IO;
+    using UnityEditor;
+    using UnityEngine;
+
     public class AssetImportProcessing : AssetPostprocessor
     {
         private char[] filterSep = new char[] { ';' };

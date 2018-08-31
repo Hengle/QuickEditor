@@ -1,12 +1,12 @@
-﻿using QuickEditor.Common;
-using System;
-using System.Collections;
-using UnityEditor;
-using UnityEditorInternal;
-using UnityEngine;
-
-namespace QuickEditor.Toolkit
+﻿namespace QuickEditor.Toolkit
 {
+    using QuickEditor.Common;
+    using System;
+    using System.Collections;
+    using UnityEditor;
+    using UnityEditorInternal;
+    using UnityEngine;
+
     public class AssetImportPresetsSettingsWindow : QEditorWindow
     {
         private int mSelectedTabIndex = 0;

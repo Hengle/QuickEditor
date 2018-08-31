@@ -1,7 +1,4 @@
-﻿/// <summary>
-/// 游戏架构 - 编辑器工具
-/// </summary>
-namespace QuickEditor.Common
+﻿namespace QuickEditor.Common
 {
     using UnityEditor;
     using UnityEngine;
