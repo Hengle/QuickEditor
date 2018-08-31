@@ -8,7 +8,7 @@ using UnityEditor;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
-public class HelpLastRelease : EditorWindow
+public class UnityHelpLinksWindow : EditorWindow
 {
 
     #region Urls
@@ -97,7 +97,7 @@ public class HelpLastRelease : EditorWindow
     private static Dictionary<string, Dictionary<string, string>> dictIniWin, dictIniOSX, dictIniLinux;
     private static bool hasLinux, hasReleaseNotes, hasTorrent;
 
-    private static HelpLastRelease window;
+    private static UnityHelpLinksWindow window;
     private static string wndTitle;
     private const string scriptName = "HelpLastRelease";
     private const string prefs = scriptName + ".";
@@ -142,14 +142,14 @@ public class HelpLastRelease : EditorWindow
     [MenuItem("Help/Links/Releases...", false, 010)]
     private static void Init()
     {
-        window = GetWindow<HelpLastRelease>(wndTitle);
+        window = GetWindow<UnityHelpLinksWindow>(wndTitle);
         SortList(String.Empty);
     }
 
     [MenuItem("Help/Links/Check for Updates...", false, 015)]
     private static void CheckforUpdates()
     {
-        window = GetWindow<HelpLastRelease>(wndTitle);
+        window = GetWindow<UnityHelpLinksWindow>(wndTitle);
         int index = Application.unityVersion.LastIndexOf('.');
         string filter = Application.unityVersion.Substring(0, index + 1);
         SortList(filter);
@@ -476,7 +476,7 @@ public class HelpLastRelease : EditorWindow
         if (!string.IsNullOrEmpty(filterString)) SortList(filterString);
         if (window == null)
         {
-            HelpLastRelease[] w = Resources.FindObjectsOfTypeAll<HelpLastRelease>();
+            UnityHelpLinksWindow[] w = Resources.FindObjectsOfTypeAll<UnityHelpLinksWindow>();
             if (w != null && w.Length > 0) window = w[0];
         }
         if (window != null) window.Repaint();
