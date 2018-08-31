@@ -1,0 +1,63 @@
+﻿namespace QuickEditor.Builder
+{
+    using QuickEditor.Common;
+    using UnityEditor;
+
+    public class ProjectBuilderToolbar
+    {
+        internal const string AutoBuilderNodeName = "QuickEditor.Builder/";
+
+        [MenuItem(AutoBuilderNodeName + "Project Build Setting", false, 1)]
+        public static void OpenProjectBuildSetting()
+        {
+            ProjectBuildSettingWindow.Open();
+        }
+
+        [MenuItem(AutoBuilderNodeName + "iOS Native Extension", false, 2)]
+        public static void OpenXcodeProjectSettings()
+        {
+            XcodeProjectSettingWindow.Open();
+        }
+
+        [MenuItem(AutoBuilderNodeName + "Build Windows Standalone", false, 100)]
+        public static void BuildWindowsStandalone()
+        {
+            BuildMechine.NewPipeline()
+                .AddActions(new BuildAction_Print("Start Build Mechine"))
+                .AddActions(new BuildAction_ActiveBuildTargetChanged(BuildTarget.StandaloneWindows))
+                .AddActions(new BuildAction_IncreaseBuildNum())
+                .AddActions(new BuildAction_SaveAndRefresh())
+                .AddActions(new BuildAction_SetBundleId("cn.test.test"))
+                .AddActions(new BuildAction_BuildProjectWindowsStandalone("game", "exe", "Build/Windows/", x64: false))
+                .Run();
+        }
+
+        [MenuItem(AutoBuilderNodeName + "Build Android", false, 101)]
+        public static void BuildAndroid()
+        {
+            BuildMechine.NewPipeline()
+                .AddActions(new BuildAction_Print("Start Build Mechine"))
+                .AddActions(new BuildAction_ActiveBuildTargetChanged(BuildTarget.Android))
+                .AddActions(new BuildAction_IncreaseBuildNum())
+                .AddActions(new BuildAction_SaveAndRefresh())
+                .AddActions(new BuildAction_SetBundleId("cn.test.test"))
+                .AddActions(new BuildAction_BuildProjectAndroid("game", "Build/Android/"))
+                .Run();
+        }
+
+        [MenuItem(AutoBuilderNodeName + "Build iOS", false, 102)]
+        public static void BuildIOS()
+        {
+        }
+
+        protected static void SetSplashScreens()
+        {
+            QEditorStaticAPI.SetAppIcon(BuildTargetGroup.iOS, ProjectBuildSetting.Current.Icon);
+            QEditorStaticAPI.SetAppIcon(BuildTargetGroup.Android, ProjectBuildSetting.Current.Icon);
+            QEditorStaticAPI.SetAppIcon(BuildTargetGroup.Standalone, ProjectBuildSetting.Current.Icon);
+            QEditorStaticAPI.SetSplashScreen("androidSplashScreen", ProjectBuildSetting.Current.SplashScreen);
+            QEditorStaticAPI.SetSplashScreen("iOSLaunchScreenPortrait", ProjectBuildSetting.Current.SplashScreen);
+            QEditorStaticAPI.SetSplashScreen("iOSLaunchScreenLandscape", ProjectBuildSetting.Current.SplashScreen);
+        }
+    }
+}

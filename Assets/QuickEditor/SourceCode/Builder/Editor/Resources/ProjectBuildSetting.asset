@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744e73fb79079b44086a7ca73a3ed453, type: 3}
+  m_Name: ProjectBuildSetting
+  m_EditorClassIdentifier: 
+  buildApplication: 1
+  productName: 
+  companyName: 234234
+  applicationIdentifier: 324234
+  iconAssetPath: "D:/ProjectManagement/YZGameProjects/_\u6846\u67B6\u66F4\u65B0/GEngine/Assets/app_icon.png"
+  splashScreenAssetPath: "D:/ProjectManagement/YZGameProjects/_\u6846\u67B6\u66F4\u65B0/GEngine/Assets/app_icon.png"
+  Version: 34124
+  BundleVersionCode: 123123
+  SplashScreenPath: erewr
+  IconPath: 
+  AndroidKeystoreName: "D:/ProjectManagement/YZGameProjects/\u6597\u94C1\u725B/Assets/_keystore/user.keystore"
+  AndroidKeystorePass: 12333333
+  AndroidKeyaliasName: 
+  AndroidKeyaliasPass: 
+  AndroidScriptingBackend: 0
+  ForceSDCardPermission: 1
+  AndroidTargetDevice: 3
+  AndroidMinSdkVersion: 14
+  AndroidPreferredInstallLocation: 0
+  iOSScriptingBackend: 1
+  iOSSdkVersion: 988
+  iOSTargetDevice: 2
+  androidSettings:
+    keystoreFile: 
+    keystorePassword: 
+    keystoreAliasName: 
+    keystoreAliasPassword: 

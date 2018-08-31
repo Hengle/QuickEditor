@@ -1,0 +1,57 @@
+﻿namespace QuickEditor.Common
+{
+    public class QProcessStaticAPI
+    {
+        public static void ExecuteNotepadCommand(string args)
+        {
+            QProcessStaticAPI.ExecuteCommand("notepad.exe", args);
+        }
+
+        public static void ExecuteTortoiseSVNCommand(string args)
+        {
+            QProcessStaticAPI.ExecuteCommand("TortoiseProc.exe", args, null, true);
+        }
+
+        public static void ExecuteCommand(string exeFilename, string args, string workingDir = "", bool useShellExecute = false)
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            process.StartInfo.FileName = exeFilename;   //确定程序名
+            process.StartInfo.Arguments = args;    //确定程式命令行
+            if (!workingDir.IsNullOrEmpty())
+            {
+                process.StartInfo.WorkingDirectory = workingDir; //工作目录
+            }
+            process.StartInfo.UseShellExecute = useShellExecute;        //Shell的使用
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.ErrorDialog = true;
+            if (process.StartInfo.UseShellExecute)
+            {
+                process.StartInfo.RedirectStandardOutput = false;
+                process.StartInfo.RedirectStandardError = false;
+                process.StartInfo.RedirectStandardInput = false;
+            }
+            else
+            {
+                process.StartInfo.RedirectStandardInput = true;   //重定向输入
+                process.StartInfo.RedirectStandardOutput = true; //重定向输出
+                process.StartInfo.RedirectStandardError = true;   //重定向输出错误
+
+                process.StartInfo.StandardOutputEncoding = System.Text.UTF8Encoding.UTF8;
+                process.StartInfo.StandardErrorEncoding = System.Text.UTF8Encoding.UTF8;
+            }
+
+            process.Start();
+            if (!process.StartInfo.UseShellExecute)
+            {
+                process.StandardOutput.ReadToEnd();//输出出流取得命令行结果果
+                string error = process.StandardError.ReadToEnd();
+                if (error != null)
+                {
+                    UnityEngine.Debug.Log(error);
+                }
+            }
+            process.WaitForExit();
+            process.Close();
+        }
+    }
+}

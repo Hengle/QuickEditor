@@ -1,0 +1,26 @@
+﻿BASECLASS=UIFrame
+
+using System.Collections.Generic;
+using System.Text;
+using Assets.GameNetSystem.Package;
+using UnityEngine;
+
+public class $ClassName : BaseUIForm
+{
+
+    public $ClassName() : base()
+    {
+        SetPrefabPath("UIPrefab/$ClassName");
+        SetUIFormsProperty(UIFormsStyle.Normal, UIFormsShowMode.Normal, UIFormsLucenyType.Translucence, UIFormsAnimation.CenterToBig);
+    }
+
+    protected override void OnAwakeInitUI()
+    {
+
+    }
+
+    public override void OnResume()
+    {
+	    base.OnResume();
+    }
+}
