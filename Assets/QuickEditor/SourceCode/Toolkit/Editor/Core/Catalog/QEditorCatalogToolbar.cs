@@ -20,14 +20,18 @@
             QEditorAssetStaticAPI.LoadOrCreateAssetFromFindAssets<ProjectCatalogSettings>();
         }
 
-        [MenuItem(CatalogNodeName + "Generate Project Catalog", false, CatalogNodePriority)]
-        private static void GenerateProjectCatalog()
+        [MenuItem(CatalogNodeName + "Generate  Assets Template Directory", false, CatalogNodePriority)]
+        private static void GenerateForAssets()
         {
             if (ProjectCatalogSettings.Current.AssetFolders != null && ProjectCatalogSettings.Current.AssetFolders.Count > 0)
             {
                 ProjectCatalogSettings.Current.AssetFolders.ForEach(path => QEditorFileStaticAPI.MakeDir(path));
             }
+        }
 
+        [MenuItem(CatalogNodeName + "Generate  Resources Template Directory", false, CatalogNodePriority)]
+        private static void GenerateForResources()
+        {
             if (ProjectCatalogSettings.Current.ResourcesFolders != null && ProjectCatalogSettings.Current.ResourcesFolders.Count > 0)
             {
                 ProjectCatalogSettings.Current.ResourcesFolders.ForEach(path => QEditorFileStaticAPI.MakeDir(Path.Combine("Resources", path)));

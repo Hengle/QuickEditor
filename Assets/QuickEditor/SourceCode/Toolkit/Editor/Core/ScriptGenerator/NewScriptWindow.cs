@@ -14,7 +14,7 @@
         private const int kButtonWidth = 120;
         private const int kLabelWidth = 85;
         private const string kLanguageEditorPrefName = "NewScriptLanguage";
-        private const string kTemplatePath = "GameEngineEditor/GEngine.Editor/Editor/EditorCore/EditorCreateScript/SmartScriptTemplates";
+        private const string kTemplatePath = "QuickEditor/SourceCode/Toolkit/Editor/Core/ScriptGenerator/SmartScriptTemplates";
         private const string kResourcesTemplatePath = "Resources/SmartScriptTemplates";
         private const string kMonoBehaviourName = "MonoBehaviour";
         private const string kPlainClassName = "Empty Class";
