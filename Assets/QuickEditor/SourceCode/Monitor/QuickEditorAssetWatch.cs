@@ -1,4 +1,4 @@
-﻿namespace QuickEditor.Toolkit
+﻿namespace QuickEditor.Monitor
 {
     using System.Collections.Generic;
     using System.IO;

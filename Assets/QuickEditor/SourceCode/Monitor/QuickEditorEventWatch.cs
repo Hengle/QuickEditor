@@ -1,4 +1,4 @@
-﻿namespace QuickEditor.Toolkit
+﻿namespace QuickEditor.Monitor
 {
     using System;
     using UnityEditor;
@@ -6,7 +6,7 @@
     using UnityEngine;
 
     [InitializeOnLoad]
-    internal sealed partial class QuickEditorWatch
+    internal sealed partial class QuickEditorEventWatch
     {
         private static EditorApplication.CallbackFunction mHierarchyWindowChangedEvent;
 
@@ -103,7 +103,7 @@
         /// </summary>
         public static bool IsInited { get; private set; }
 
-        static QuickEditorWatch()
+        static QuickEditorEventWatch()
         {
             EditorApplication.hierarchyWindowChanged -= OnHierarchyWindowChanged;
             EditorApplication.hierarchyWindowChanged += OnHierarchyWindowChanged;

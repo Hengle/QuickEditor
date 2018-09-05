@@ -1,4 +1,4 @@
-﻿namespace QuickEditor.Toolkit
+﻿namespace QuickEditor.Monitor
 {
     using System.IO;
     using System.Reflection;
@@ -11,7 +11,7 @@
     {
         static QuickEditorProjectWindowWatch()
         {
-            QuickEditorWatch.OnProjectWindowItemCallback += ProjectWindowItemOnGUI;
+            QuickEditorEventWatch.OnProjectWindowItemCallback += ProjectWindowItemOnGUI;
         }
 
         private static void ProjectWindowItemOnGUI(string guid, Rect rect)

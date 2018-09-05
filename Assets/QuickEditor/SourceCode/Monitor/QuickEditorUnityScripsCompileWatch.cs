@@ -1,4 +1,4 @@
-﻿namespace QuickEditor.Toolkit
+﻿namespace QuickEditor.Monitor
 {
     using System;
     using System.Collections.Generic;
@@ -6,9 +6,9 @@
     using UnityEngine;
 
     [InitializeOnLoad]
-    public class UnityScripsCompiling : AssetPostprocessor
+    public class QuickEditorUnityScripsCompileWatch : AssetPostprocessor
     {
-        static UnityScripsCompiling()
+        static QuickEditorUnityScripsCompileWatch()
         {
             EditorApplication.update += Update;
         }
