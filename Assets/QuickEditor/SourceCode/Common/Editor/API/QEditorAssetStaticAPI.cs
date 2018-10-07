@@ -8,8 +8,7 @@
 
     public class QEditorAssetStaticAPI
     {
-
-        public enum AssetPathType
+        public enum AssetPathMode
         {
             SelectionAssetPath,
             ScriptableObjectAssetPath,
@@ -22,10 +21,10 @@
             return asset;
         }
 
-        public static T CreateAsset<T>(AssetPathType type = AssetPathType.ScriptableObjectAssetPath) where T : ScriptableObject
+        public static T CreateAsset<T>(AssetPathMode type = AssetPathMode.ScriptableObjectAssetPath) where T : ScriptableObject
         {
             T asset = ScriptableObject.CreateInstance<T>();
-            return CreateAsset(asset, (type == AssetPathType.ScriptableObjectAssetPath ? asset.GetScriptableObjectPath() : QEditorPathStaticAPI.SelectionAssetPath)) as T;
+            return CreateAsset(asset, (type == AssetPathMode.ScriptableObjectAssetPath ? asset.GetScriptableObjectPath() : QEditorPathStaticAPI.SelectionAssetPath)) as T;
         }
 
         public static T CreateAsset<T>(string targetPath) where T : ScriptableObject
@@ -35,9 +34,9 @@
             return CreateAsset(asset, targetPath) as T;
         }
 
-        public static UnityEngine.Object CreateAsset(ScriptableObject asset, AssetPathType type = AssetPathType.ScriptableObjectAssetPath)
+        public static UnityEngine.Object CreateAsset(ScriptableObject asset, AssetPathMode type = AssetPathMode.ScriptableObjectAssetPath)
         {
-            return CreateAsset(asset, (type == AssetPathType.ScriptableObjectAssetPath ? asset.GetScriptableObjectPath() : QEditorPathStaticAPI.SelectionAssetPath));
+            return CreateAsset(asset, (type == AssetPathMode.ScriptableObjectAssetPath ? asset.GetScriptableObjectPath() : QEditorPathStaticAPI.SelectionAssetPath));
         }
 
         public static UnityEngine.Object CreateAsset(UnityEngine.Object asset, string targetPath)

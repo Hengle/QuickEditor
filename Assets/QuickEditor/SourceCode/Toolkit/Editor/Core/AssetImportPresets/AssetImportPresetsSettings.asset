@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e2d4362425b2c4999a430211e9eb56, type: 3}
+  m_Name: AssetImportPresetsSettings
+  m_EditorClassIdentifier: 
+  MeshImportSettings:
+  - tagForDeletion: 0
+    positionOffset: 0
+    saveName: New Preset
+    pathNameFilter: 
+    fileNameFilter: 
+    isEnabled: 1
+    ScaleFactor: 0
+    MeshCompression: 0
+    ReadWriteEnabled: 0
+    OptimizeMesh: 0
+    ImportBlendShapes: 0
+    GenerateColliders: 0
+    KeepQuads: 0
+    SwapUVs: 0
+    GenerateLightmapUV: 0
+    LightmapHardAngle: 0
+    LightmapPadding: 0
+    LightmapAreaError: 0
+    LightmapAngleError: 0
+    ImportNormals: 0
+    SmoothingAngle: 0
+    TangentMode: 0
+    ImportMats: 0
+    MaterialNaming: 0
+    MaterialSearch: 0
+    ForceNoRig: 0
+    ImportAnim: 0
+    ImportCameras: 0
+    ImportVisibility: 0
+    ImportLights: 0
+    WeldVertices: 0
+  - tagForDeletion: 0
+    positionOffset: 0
+    saveName: New Preset
+    pathNameFilter: 
+    fileNameFilter: 
+    isEnabled: 1
+    ScaleFactor: 0
+    MeshCompression: 0
+    ReadWriteEnabled: 0
+    OptimizeMesh: 0
+    ImportBlendShapes: 0
+    GenerateColliders: 0
+    KeepQuads: 0
+    SwapUVs: 0
+    GenerateLightmapUV: 0
+    LightmapHardAngle: 0
+    LightmapPadding: 0
+    LightmapAreaError: 0
+    LightmapAngleError: 0
+    ImportNormals: 0
+    SmoothingAngle: 0
+    TangentMode: 0
+    ImportMats: 0
+    MaterialNaming: 0
+    MaterialSearch: 0
+    ForceNoRig: 0
+    ImportAnim: 0
+    ImportCameras: 0
+    ImportVisibility: 0
+    ImportLights: 0
+    WeldVertices: 0
+  - tagForDeletion: 0
+    positionOffset: 0
+    saveName: New Preset
+    pathNameFilter: 
+    fileNameFilter: 
+    isEnabled: 1
+    ScaleFactor: 0
+    MeshCompression: 0
+    ReadWriteEnabled: 0
+    OptimizeMesh: 0
+    ImportBlendShapes: 0
+    GenerateColliders: 0
+    KeepQuads: 0
+    SwapUVs: 0
+    GenerateLightmapUV: 0
+    LightmapHardAngle: 0
+    LightmapPadding: 0
+    LightmapAreaError: 0
+    LightmapAngleError: 0
+    ImportNormals: 0
+    SmoothingAngle: 0
+    TangentMode: 0
+    ImportMats: 0
+    MaterialNaming: 0
+    MaterialSearch: 0
+    ForceNoRig: 0
+    ImportAnim: 0
+    ImportCameras: 0
+    ImportVisibility: 0
+    ImportLights: 0
+    WeldVertices: 0
+  AudioImportSettings: []
+  TextureImportSettings: []

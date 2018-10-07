@@ -12,7 +12,7 @@
     internal static class QEditorCatalogToolbar
     {
         private const int CatalogNodePriority = 800;
-        private const string CatalogNodeName = QEditorDefines.ToolkitRootNodeName + "Catalog Toolbar/";
+        private const string CatalogNodeName = QToolkitConstants.ToolkitRootNodeName + "Catalog Toolbar/";
 
         [MenuItem(CatalogNodeName + "Open Project Catalog Settings", false, CatalogNodePriority)]
         private static void OpenCatalogSettings()

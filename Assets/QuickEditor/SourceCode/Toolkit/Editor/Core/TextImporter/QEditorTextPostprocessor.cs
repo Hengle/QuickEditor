@@ -5,7 +5,7 @@
 
     public class QEditorTextPostprocessor : UnityEditor.AssetPostprocessor
     {
-        private const string TextEncodingNodeName = QEditorDefines.ToolkitRootNodeName + "Text Encoding Toolbar/";
+        private const string TextEncodingNodeName = QToolkitConstants.ToolkitRootNodeName + "Text Encoding Toolbar/";
 
         public static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
         {

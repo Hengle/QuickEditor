@@ -5,6 +5,39 @@
     using UnityEditor;
     using UnityEngine;
 
+    public enum PathMode
+    {
+        /// <summary>
+        /// 系统全路径
+        /// </summary>
+        Full,
+
+        /// <summary>
+        /// Application.dataPath路径
+        /// </summary>
+        Data,
+
+        /// <summary>
+        /// Application.persistentDataPath路径
+        /// </summary>
+        Persistent,
+
+        /// <summary>
+        /// Application.temporaryCachePath路径
+        /// </summary>
+        Temporary,
+
+        /// <summary>
+        /// Application.streamingAssetsPath路径
+        /// </summary>
+        Streaming,
+
+        /// <summary>
+        /// 压缩的资源路径，Resources目录
+        /// </summary>
+        Resources,
+    }
+
     public static class QEditorPathStaticAPI
     {
         public static readonly string AssetPathNodeName = "Assets";
@@ -125,6 +158,11 @@
             newFilePath2 = newFilePath2.Replace("///", "/").Trim();
             newFilePath2 = newFilePath2.Replace("\\\\", "/").Trim();
             return newFilePath2;
+        }
+
+        private static string FormatPath(string path)
+        {
+            return path.Substring(path.IndexOf("Assets", StringComparison.Ordinal));
         }
 
         #region C# API 重写

@@ -1,11 +1,41 @@
 ﻿namespace QuickEditor.Common
 {
     using UnityEditor;
+    using UnityEngine;
+
+    public class QEditorHorizontalSplitWindow : QEditorWindow
+    {
+        private QEditorGUILayout.SplitViewBlock horizontalSplitView = new QEditorGUILayout.SplitViewBlock(QEditorGUILayout.SplitViewBlock.Direction.Horizontal);
+
+        protected override void OnGUI()
+        {
+            base.OnGUI();
+            horizontalSplitView.BeginSplitView();
+            DrawLeftRect();
+            horizontalSplitView.Split();
+            DrawRightRect();
+            horizontalSplitView.EndSplitView();
+        }
+
+        protected virtual void DrawRightRect()
+        {
+        }
+
+        protected virtual void DrawLeftRect()
+        {
+        }
+    }
 
     public class QEditorWindow : EditorWindow
     {
+        protected static string WindowTitle;
+        protected static Vector2 WindowRect = new Vector2(800, 600);
 
-        protected static string Title;
+        public static T GetEditorWindow<T>() where T : EditorWindow
+        {
+            return GetWindow<T>(WindowTitle, true)
+                    .minSize(WindowRect) as T;
+        }
 
         protected virtual void OnEnable()
         {

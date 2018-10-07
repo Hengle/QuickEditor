@@ -6,11 +6,6 @@
 
     public static class QEditorStaticAPI
     {
-        public static GUIStyle GetEditorStyle(string style)
-        {
-            return EditorGUIUtility.GetBuiltinSkin(EditorGUIUtility.isProSkin ? EditorSkin.Scene : EditorSkin.Inspector).GetStyle(style);
-        }
-
         public static void SetAppIcon(BuildTargetGroup group, Texture2D texture)
         {
             var count = PlayerSettings.GetIconSizesForTargetGroup(group).Length;

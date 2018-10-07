@@ -4,25 +4,25 @@
     {
         public static void ExecuteNotepadCommand(string args)
         {
-            QProcessStaticAPI.ExecuteCommand("notepad.exe", args);
+            QProcessStaticAPI.ProcessCommand("notepad.exe", args);
         }
 
         public static void ExecuteTortoiseSVNCommand(string args)
         {
-            QProcessStaticAPI.ExecuteCommand("TortoiseProc.exe", args, null, true);
+            QProcessStaticAPI.ProcessCommand("TortoiseProc.exe", args, true, null, true);
         }
 
-        public static void ExecuteCommand(string exeFilename, string args, string workingDir = "", bool useShellExecute = false)
+        public static void ProcessCommand(string processName, string args, bool withWindow = true, string workingDir = "", bool useShellExecute = false)
         {
             System.Diagnostics.Process process = new System.Diagnostics.Process();
-            process.StartInfo.FileName = exeFilename;   //确定程序名
+            process.StartInfo.FileName = processName;   //确定程序名
             process.StartInfo.Arguments = args;    //确定程式命令行
             if (!workingDir.IsNullOrEmpty())
             {
                 process.StartInfo.WorkingDirectory = workingDir; //工作目录
             }
             process.StartInfo.UseShellExecute = useShellExecute;        //Shell的使用
-            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.CreateNoWindow = withWindow;
             process.StartInfo.ErrorDialog = true;
             if (process.StartInfo.UseShellExecute)
             {
