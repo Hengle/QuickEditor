@@ -7,11 +7,12 @@
     using UnityEditorInternal;
     using UnityEngine;
 
-    public class XcodeProjectSettingWindow : QEditorWindow
+    public class XcodeProjectSettingWindow : QEditorHorizontalSplitWindow
     {
         private ReorderableList mReorderableList;
         private Vector2 mReorderableScrollPosition;
         private Vector2 mSettingsScrollPosition;
+        private XcodeProjectSetting mCurrentSetting;
 
         public static void Open()
         {
@@ -23,55 +24,59 @@
             };
         }
 
+        protected override void OnEnable()
+        {
+            mCurrentSetting = XcodeProjectSetting.Current;
+        }
+
         protected override void OnGUI()
         {
-            minSize = new Vector2(800, 600);
-            Rect windowRect = position.WindowRect();
-            Rect insetRect = windowRect.WithPadding(3);
-
-            QEditorGUIStaticAPI.DrawRect(windowRect, QEditorColors.ChineseBlack);
-
-            QEditorGUIStaticAPI.BeginChangeCheck();
-
-            var setting = XcodeProjectSetting.Current;
-            Rect topLeftPane = QEditorGUIStaticAPI.DrawLeftRect(insetRect, () =>
+            EditorGUI.BeginChangeCheck();
+            base.OnGUI();
+            if (EditorGUI.EndChangeCheck())
             {
-                QEditorGUIStaticAPI.Toggle("EnableBitCode", ref setting.EnableBitCode);
-                QEditorGUIStaticAPI.Toggle("EnableUIStatusBar", ref setting.EnableUIStatusBar);
-                QEditorGUIStaticAPI.Toggle("DeleteLaunchImages", ref setting.DeleteLaunchImages);
-                QEditorGUIStaticAPI.Toggle("NSAppTransportSecurity", ref setting.NSAppTransportSecurity);
+                EditorUtility.SetDirty(mCurrentSetting);
+            }
+        }
 
-                QEditorGUIStaticAPI.DoReorderableList<XcodeProjectSetting>(setting, setting.XcodeSettingsList, typeof(XcodeProjectConfig), ref mReorderableList, ref mReorderableScrollPosition, ref mSettingsScrollPosition, (Rect rect, int index, bool isActive, bool isFocused) =>
-                 {
-                     var elem = (AbstractXcodeConfig)setting.XcodeSettingsList[index];
-                     GUI.Label(rect, elem.SaveName);
-                     rect.x = rect.xMax - 15;
-                     elem.Enabled = GUI.Toggle(rect, elem.Enabled, string.Empty);
-                 }, () =>
-                 {
-                     setting.XcodeSettingsList.ForEach(item => item.Enabled = true);
-                 }, () =>
-                 {
-                     setting.XcodeSettingsList.ForEach(item => item.Enabled = false);
-                 });
+        protected override void DrawLeftRect()
+        {
+            base.DrawLeftRect();
+            QEditorGUIStaticAPI.Toggle("EnableBitCode", ref mCurrentSetting.EnableBitCode);
+            QEditorGUIStaticAPI.Toggle("EnableUIStatusBar", ref mCurrentSetting.EnableUIStatusBar);
+            QEditorGUIStaticAPI.Toggle("DeleteLaunchImages", ref mCurrentSetting.DeleteLaunchImages);
+            QEditorGUIStaticAPI.Toggle("NSAppTransportSecurity", ref mCurrentSetting.NSAppTransportSecurity);
+
+            QEditorGUIStaticAPI.DoReorderableList<XcodeProjectSetting>(mCurrentSetting, mCurrentSetting.XcodeSettingsList, typeof(XcodeProjectConfig), ref mReorderableList, ref mReorderableScrollPosition, ref mSettingsScrollPosition, (Rect rect, int index, bool isActive, bool isFocused) =>
+            {
+                var elem = (AbstractXcodeConfig)mCurrentSetting.XcodeSettingsList[index];
+                GUI.Label(rect, elem.SaveName);
+                rect.x = rect.xMax - 15;
+                elem.Enabled = GUI.Toggle(rect, elem.Enabled, string.Empty);
+            }, () =>
+            {
+                mCurrentSetting.XcodeSettingsList.ForEach(item => item.Enabled = true);
+            }, () =>
+            {
+                mCurrentSetting.XcodeSettingsList.ForEach(item => item.Enabled = false);
             });
-            QEditorGUIStaticAPI.DrawRightRect(insetRect, topLeftPane, () =>
+        }
+
+        protected override void DrawRightRect()
+        {
+            if (mReorderableList.index < 0) { mReorderableList.index = 0; }
+            using (var scroll = new EditorGUILayout.ScrollViewScope(mSettingsScrollPosition))
             {
-                if (mReorderableList.index < 0) { mReorderableList.index = 0; }
-                using (var scroll = new EditorGUILayout.ScrollViewScope(mSettingsScrollPosition))
+                mSettingsScrollPosition = scroll.scrollPosition;
+                if (mReorderableList.index >= mCurrentSetting.XcodeSettingsList.Count)
                 {
-                    mSettingsScrollPosition = scroll.scrollPosition;
-                    if (mReorderableList.index >= setting.XcodeSettingsList.Count)
-                    {
-                        mReorderableList.index = 0;
-                    }
-                    if (setting.XcodeSettingsList.Count > 0)
-                    {
-                        setting.XcodeSettingsList[mReorderableList.index].DrawInnerGUI();
-                    }
+                    mReorderableList.index = 0;
                 }
-            });
-            QEditorGUIStaticAPI.EndChangeCheck(setting);
+                if (mCurrentSetting.XcodeSettingsList.Count > 0)
+                {
+                    mCurrentSetting.XcodeSettingsList[mReorderableList.index].DrawInnerGUI();
+                }
+            }
         }
 
         private void DoReorderableList(IList list, Type listType)

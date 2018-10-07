@@ -10,7 +10,7 @@
         [MenuItem(AutoBuilderNodeName + "Project Build Setting", false, 1)]
         public static void OpenProjectBuildSetting()
         {
-            ProjectBuildSettingWindow.Open();
+            ProjectBuilderWindow.Open();
         }
 
         [MenuItem(AutoBuilderNodeName + "iOS Native Extension", false, 2)]
@@ -58,6 +58,30 @@
             QEditorStaticAPI.SetSplashScreen("androidSplashScreen", ProjectBuildSetting.Current.SplashScreen);
             QEditorStaticAPI.SetSplashScreen("iOSLaunchScreenPortrait", ProjectBuildSetting.Current.SplashScreen);
             QEditorStaticAPI.SetSplashScreen("iOSLaunchScreenLandscape", ProjectBuildSetting.Current.SplashScreen);
+        }
+
+        private static string ResolveExtension(BuildTarget a_target)
+        {
+            switch (a_target)
+            {
+                case BuildTarget.StandaloneOSXIntel64:
+                    return ".app";
+
+                case BuildTarget.StandaloneWindows:
+                case BuildTarget.StandaloneWindows64:
+                    return ".exe";
+
+                case BuildTarget.iOS:
+                    return ".xcode";
+
+                case BuildTarget.Android:
+                    return ".apk";
+
+                case BuildTarget.WebGL:
+                    return ".html";
+            }
+
+            return string.Empty;
         }
     }
 }

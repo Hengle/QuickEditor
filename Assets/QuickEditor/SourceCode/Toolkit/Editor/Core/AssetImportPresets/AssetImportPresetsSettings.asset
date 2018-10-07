@@ -14,7 +14,7 @@ MonoBehaviour:
   MeshImportSettings:
   - tagForDeletion: 0
     positionOffset: 0
-    saveName: New Preset
+    saveName: 22
     pathNameFilter: 
     fileNameFilter: 
     isEnabled: 1

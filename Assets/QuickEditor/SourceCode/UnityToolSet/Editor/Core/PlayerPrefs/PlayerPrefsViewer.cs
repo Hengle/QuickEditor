@@ -10,7 +10,7 @@ public enum PlayerPrefsValueType
 
 public class PlayerPrefsViewer : EditorWindow
 {
-    [MenuItem("Window/PlayerPrefsViewer")]
+   // [MenuItem("Window/PlayerPrefsViewer")]
     public static void OpenEditor()
     {
         EditorWindow window = EditorWindow.GetWindow(typeof(PlayerPrefsViewer));

@@ -436,7 +436,7 @@
 
                 s_Styles = new Dictionary<string, GUIStyle>
                 {
-                    { "ToggleOn",       new GUIStyle (EditorStyles.miniButton)      { padding = new RectOffset (2,2,2,2) } },
+                    { "ToggleOn", new GUIStyle (EditorStyles.miniButton)      { padding = new RectOffset (2,2,2,2) } },
                     { "ToggleOff",      new GUIStyle (EditorStyles.miniButton)      { padding = new RectOffset (2,2,2,2) } },
                     { "ToggleMidOn",    new GUIStyle (EditorStyles.miniButtonMid)   { padding = new RectOffset (2,2,2,2), margin = new RectOffset (0,0,2,2) } },
                     { "ToggleMidOff",   new GUIStyle (EditorStyles.miniButtonMid)   { padding = new RectOffset (2,2,2,2), margin = new RectOffset (0,0,2,2) } },

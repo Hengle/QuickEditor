@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
@@ -57,6 +56,13 @@ namespace QuickEditor.Builder
             Debug.LogFormat("打包至 {0} 结果 {1}", path, res);
 
             Context.Set("BuildPath", path);
+            //        BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
+            //        buildPlayerOptions.locationPathName = string.Format("{0}\\{3}\\{2}\\{3}_{2}_{1}{4}",
+            //Path.GetFullPath(Application.dataPath + "/../" + prefs.BuildFolder),
+            //prefs.ProjectName,
+            //prefs.ProjectVersion,
+            //platformName,
+            //ResolveExtension(a_platform)
 
             return BuildState.Success;
         }

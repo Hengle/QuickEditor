@@ -14,21 +14,21 @@ MonoBehaviour:
   buildApplication: 1
   productName: 
   companyName: 234234
-  applicationIdentifier: 324234
+  applicationIdentifier: 
   iconAssetPath: "D:/ProjectManagement/YZGameProjects/_\u6846\u67B6\u66F4\u65B0/GEngine/Assets/app_icon.png"
   splashScreenAssetPath: "D:/ProjectManagement/YZGameProjects/_\u6846\u67B6\u66F4\u65B0/GEngine/Assets/app_icon.png"
-  Version: 34124
-  BundleVersionCode: 123123
+  Version: 
+  BundleVersionCode: 
   SplashScreenPath: erewr
   IconPath: 
-  AndroidKeystoreName: "D:/ProjectManagement/YZGameProjects/\u6597\u94C1\u725B/Assets/_keystore/user.keystore"
-  AndroidKeystorePass: 12333333
+  AndroidKeystoreName: Assets/_keystore/user.keystore
+  AndroidKeystorePass: henry890307
   AndroidKeyaliasName: 
   AndroidKeyaliasPass: 
   AndroidScriptingBackend: 0
   ForceSDCardPermission: 1
   AndroidTargetDevice: 3
-  AndroidMinSdkVersion: 14
+  AndroidMinSdkVersion: 16
   AndroidPreferredInstallLocation: 0
   iOSScriptingBackend: 1
   iOSSdkVersion: 988

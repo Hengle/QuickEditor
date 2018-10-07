@@ -7,7 +7,7 @@ public class ReflectionEdtorWindow : EditorWindow
 {
     private GUIStyle style;
 
-    [MenuItem("Window/反射查看器", priority = 1100)]
+    // [MenuItem("Window/反射查看器", priority = 1100)]
     public static void ShowWindow()
     {
         GetWindow(typeof(ReflectionEdtorWindow));
@@ -592,7 +592,6 @@ public class ReflectionEdtorWindow : EditorWindow
                 {
                     content += ",";
                 }
-
             }
 
             content += ");\n";

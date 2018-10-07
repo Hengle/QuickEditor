@@ -7,18 +7,19 @@ namespace QuickEditor.Builder
     using UnityEditor;
     using UnityEngine;
 
-    public class ProjectBuildSettingWindow : QEditorWindow
+    public class ProjectBuilderWindow : QEditorHorizontalSplitWindow
     {
         public static void Open()
         {
-            WindowTitle = "Project Build Setting";
-            GetWindow<ProjectBuildSettingWindow>(WindowTitle, true)
-               .minSize(WindowRect);
+            WindowTitle = "Project Builder";
+            GetEditorWindow<ProjectBuilderWindow>();
         }
 
         private SerializedObject mSerializedObject;
         private ProjectBuildSetting mAppBuildSetting;
         private Vector2 mScrollPos;
+        private int mSelectedTabIndex = 0;
+        private string[] mAssetTabsText = new string[] { "Model", "Texture", "Audio" };
 
         protected override void OnEnable()
         {
@@ -46,6 +47,24 @@ namespace QuickEditor.Builder
 
         protected override void OnGUI()
         {
+            EditorGUI.BeginChangeCheck();
+            base.OnGUI();
+            if (EditorGUI.EndChangeCheck())
+            {
+                EditorUtility.SetDirty(mAppBuildSetting);
+            }
+        }
+
+        protected override void DrawLeftRect()
+        {
+            base.DrawLeftRect();
+            GUILayout.BeginHorizontal(EditorStyles.toolbar);
+            QEditorGUIStaticAPI.Toolbar(ref mSelectedTabIndex, mAssetTabsText, EditorStyles.toolbarButton);
+            GUILayout.EndHorizontal();
+        }
+
+        protected override void DrawRightRect()
+        {
             using (new QEditorGUILayout.ScrollViewBlock(ref mScrollPos))
             {
                 DrawOnekeyPackGeneralSettings(mAppBuildSetting);
@@ -66,7 +85,6 @@ namespace QuickEditor.Builder
 
         private void DrawOnekeyPackGeneralSettings(ProjectBuildSetting settings)
         {
-            EditorGUILayout.Separator();
             QEditorGUIStaticAPI.DrawFoldableBlock(ref mGeneralSettingsFoldout, "Application Build Setting", () =>
             {
                 QEditorGUIStaticAPI.DragAndDropTextField("name", ref settings.productName);
@@ -80,15 +98,6 @@ namespace QuickEditor.Builder
                 QEditorGUIStaticAPI.FileTextField("splashScreenAssetPath", ref settings.splashScreenAssetPath, "选择文件", "png");
                 QEditorGUIStaticAPI.FileTextField("iconAssetPath", ref settings.iconAssetPath, "选择文件", "png");
             });
-
-            //using (new GEditorGUILayout.GEditorGUIVerticalGroupScope("Application Build Setting"))
-            //{
-            //}
-
-            //GUILayout.Label("General Options");
-            //EditorGUILayout.BeginVertical();
-
-            //EditorGUILayout.EndVertical();
         }
 
         private void DrawOnekeyPackAndroidSettings(ProjectBuildSetting settings)
