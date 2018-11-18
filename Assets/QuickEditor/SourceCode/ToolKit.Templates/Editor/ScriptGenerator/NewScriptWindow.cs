@@ -655,7 +655,7 @@
                 SetClassNameBasedOnTargetClassName();
             }
 
-            if (m_FocusTextFieldNow && Event.current.type == EventType.repaint)
+            if (m_FocusTextFieldNow && Event.current.type == EventType.Repaint)
             {
                 GUI.FocusControl("CustomEditorTargetClassNameField");
                 m_FocusTextFieldNow = false;
@@ -694,7 +694,7 @@
             GUI.SetNextControlName("ScriptNameField");
             m_ScriptPrescription.m_ClassName = EditorGUILayout.TextField("Name", m_ScriptPrescription.m_ClassName);
 
-            if (m_FocusTextFieldNow && !m_IsCustomEditor && Event.current.type == EventType.repaint)
+            if (m_FocusTextFieldNow && !m_IsCustomEditor && Event.current.type == EventType.Repaint)
             {
                 GUI.FocusControl("ScriptNameField");
                 m_FocusTextFieldNow = false;

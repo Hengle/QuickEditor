@@ -46,10 +46,10 @@ namespace QuickEditor.Builder
 
             var res = BuildPipeline.BuildPlayer(listScene.ToArray(), path, buildTarget, BuildOptions.None);
 
-            if (string.IsNullOrEmpty(res) == false)
-            {
-                throw new Exception("Build Fail : " + res);
-            }
+            //if (string.IsNullOrEmpty(res) == false)
+            //{
+            //    throw new Exception("Build Fail : " + res);
+            //}
 
             Debug.LogFormat("打包至 {0} 结果 {1}", path, res);
 

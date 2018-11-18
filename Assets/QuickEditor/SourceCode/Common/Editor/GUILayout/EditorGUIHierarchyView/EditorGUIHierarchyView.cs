@@ -209,11 +209,11 @@
 
                 opened = EditorGUILayout.Foldout(wasOpened, label, styleToUse);
 
-                if (isSelected && Event.current.type == EventType.keyDown && Event.current.keyCode == KeyCode.RightArrow)
+                if (isSelected && Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.RightArrow)
                 {
                     opened = true;
                 }
-                else if (isSelected && Event.current.type == EventType.keyDown && Event.current.keyCode == KeyCode.LeftArrow)
+                else if (isSelected && Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.LeftArrow)
                 {
                     opened = false;
                 }
@@ -311,7 +311,7 @@
 
         private void HandleKeyboardCycle(string previousNodeID, string currentNodeID)
         {
-            if (Event.current.type == EventType.keyDown && Event.current.keyCode == KeyCode.DownArrow)
+            if (Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.DownArrow)
             {
                 if (IsSelected(previousNodeID))
                 {
@@ -319,7 +319,7 @@
                     SetSelected(currentNodeID);
                 }
             }
-            else if (Event.current.type == EventType.keyDown && Event.current.keyCode == KeyCode.UpArrow)
+            else if (Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.UpArrow)
             {
                 if (IsSelected(currentNodeID))
                 {
@@ -334,7 +334,7 @@
             var area = EditorGUILayout.BeginHorizontal(IsSelected(id) ? selectedAreaStyle : GUIStyle.none, GUILayout.ExpandWidth(true));
             Event currentEvent = Event.current;
             bool touchedInside = false;
-            if (currentEvent.type == EventType.mouseUp)
+            if (currentEvent.type == EventType.MouseUp)
             {
                 Vector2 mousePosition = currentEvent.mousePosition;
                 if (area.Contains(mousePosition))

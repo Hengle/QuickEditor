@@ -41,7 +41,7 @@ namespace QuickEditor.Builder
         public string AndroidKeyaliasPass;
         public ScriptingImplementation AndroidScriptingBackend;
         public bool ForceSDCardPermission;
-        public AndroidTargetDevice AndroidTargetDevice;
+        public AndroidArchitecture AndroidTargetDevice;
         public AndroidSdkVersions AndroidMinSdkVersion;
         public AndroidPreferredInstallLocation AndroidPreferredInstallLocation;
 
@@ -60,7 +60,7 @@ namespace QuickEditor.Builder
             AndroidKeystorePass = "henry890307";
             AndroidKeyaliasName = string.Empty;
             AndroidKeyaliasPass = string.Empty;
-            AndroidTargetDevice = AndroidTargetDevice.ARMv7;
+            AndroidTargetDevice = AndroidArchitecture.ARMv7;
             AndroidMinSdkVersion = AndroidSdkVersions.AndroidApiLevel16;
             AndroidPreferredInstallLocation = AndroidPreferredInstallLocation.Auto;
             AndroidScriptingBackend = ScriptingImplementation.Mono2x;

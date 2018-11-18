@@ -715,7 +715,7 @@
             {
                 Rect rect = EditorGUILayout.GetControlRect(options);
                 path = EditorGUI.TextField(rect, name, path);
-                if ((Event.current.type == EventType.dragUpdated ||
+                if ((Event.current.type == EventType.DragUpdated ||
                     Event.current.type == EventType.DragExited) &&
                 rect.Contains(Event.current.mousePosition))
                 {

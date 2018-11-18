@@ -111,7 +111,7 @@ namespace QuickEditor.Builder
                 settings.AndroidKeyaliasName = EditorGUILayout.TextField("KeyaliasName", settings.AndroidKeyaliasName);
                 settings.AndroidKeyaliasPass = EditorGUILayout.TextField("KeyaliasPass", settings.AndroidKeyaliasPass);
                 settings.ForceSDCardPermission = EditorGUILayout.Toggle("ForceSDCardPermission", settings.ForceSDCardPermission);
-                settings.AndroidTargetDevice = (AndroidTargetDevice)EditorGUILayout.EnumPopup("Device Filter", settings.AndroidTargetDevice);
+                settings.AndroidTargetDevice = (AndroidArchitecture)EditorGUILayout.EnumPopup("Device Filter", settings.AndroidTargetDevice);
                 settings.AndroidMinSdkVersion = (AndroidSdkVersions)EditorGUILayout.EnumPopup("Min API Level", settings.AndroidMinSdkVersion);
                 settings.AndroidPreferredInstallLocation = (AndroidPreferredInstallLocation)EditorGUILayout.EnumPopup("Install Location", settings.AndroidPreferredInstallLocation);
                 settings.AndroidScriptingBackend = (ScriptingImplementation)EditorGUILayout.EnumPopup("Scripting Backend", settings.AndroidScriptingBackend);
