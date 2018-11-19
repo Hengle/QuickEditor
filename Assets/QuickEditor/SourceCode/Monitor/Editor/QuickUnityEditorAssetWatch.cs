@@ -7,15 +7,13 @@
     using UnityEngine;
     using UnityEngine.SceneManagement;
 
-    internal sealed partial class QuickEditorAssetWatch : UnityEditor.AssetModificationProcessor
+    internal sealed partial class QuickUnityEditorAssetWatch : UnityEditor.AssetModificationProcessor
     {
-        //asset创建
         public static void OnWillCreateAsset(string path)
         {
             Debug.Log("OnWillCreateAsset " + path);
         }
 
-        //asset保存\场景保存
         public static string[] OnWillSaveAssets(string[] paths)
         {
             List<string> result = new List<string>();
@@ -34,7 +32,6 @@
             return result.ToArray();
         }
 
-        //资源移动
         public static AssetMoveResult OnWillMoveAsset(string oldPath, string newPath)
         {
             AssetMoveResult result = AssetMoveResult.DidNotMove;
@@ -51,7 +48,6 @@
             return result;
         }
 
-        //资源删除
         public static AssetDeleteResult OnWillDeleteAsset(string assetPath, RemoveAssetOptions option)
         {
             if (IsLocked(assetPath))

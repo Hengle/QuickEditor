@@ -102,7 +102,7 @@
             if (asset == null)
             {
                 asset = ScriptableObject.CreateInstance<T>();
-                string fileName = AssetDatabase.GenerateUniqueAssetPath(asset.GetScriptableObjectPath() + "/" + asset.GetType().Name + ".asset");
+                string fileName = AssetDatabase.GenerateUniqueAssetPath(asset.GetScriptableObjectPath() + "/Resources/" + asset.GetType().Name + ".asset");
                 BuildAsset(asset, fileName);
             }
             if (mFocusProjectWindow)

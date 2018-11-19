@@ -13,11 +13,30 @@
 #endif
 
     using UnityEngine;
-    using UnityEditor;
 
     using System.IO;
+    using UnityEditor.Build.Reporting;
+    using UnityEditor;
 
-#if UNITY_5_6_OR_NEWER
+#if UNITY_2018_2_OR_NEWER
+
+    public class XcodePostBuildProcessor : IPostprocessBuildWithReport
+    {
+        public int callbackOrder
+        {
+            get { return 0; }
+        }
+
+        public void OnPostprocessBuild(BuildReport report)
+        {
+            if (report.summary.platform != BuildTarget.iOS)
+                return;
+
+            iOSNativeExtension.ProcessNativeExtension(report.summary.outputPath);
+        }
+    }
+
+#elif UNITY_5_6 || UNITY_2017
 
     public class XcodePostBuildProcessor : IPostprocessBuild
     {

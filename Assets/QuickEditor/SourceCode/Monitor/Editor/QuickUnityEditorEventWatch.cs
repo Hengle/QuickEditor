@@ -6,7 +6,7 @@
     using UnityEngine;
 
     [InitializeOnLoad]
-    internal sealed partial class QuickEditorEventWatch
+    internal sealed partial class QuickUnityEditorEventWatch
     {
         private static EditorApplication.CallbackFunction mHierarchyWindowChangedEvent;
 
@@ -103,7 +103,7 @@
         /// </summary>
         public static bool IsInited { get; private set; }
 
-        static QuickEditorEventWatch()
+        static QuickUnityEditorEventWatch()
         {
             EditorApplication.hierarchyWindowChanged -= OnHierarchyWindowChanged;
             EditorApplication.hierarchyWindowChanged += OnHierarchyWindowChanged;

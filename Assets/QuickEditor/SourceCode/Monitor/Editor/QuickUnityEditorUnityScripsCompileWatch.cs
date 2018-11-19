@@ -6,9 +6,9 @@
     using UnityEngine;
 
     [InitializeOnLoad]
-    internal sealed partial class QuickEditorUnityScripsCompileWatch
+    internal sealed partial class QuickUnityEditorUnityScripsCompileWatch
     {
-        static QuickEditorUnityScripsCompileWatch()
+        static QuickUnityEditorUnityScripsCompileWatch()
         {
             EditorApplication.update -= Update;
             EditorApplication.update += Update;
@@ -16,13 +16,9 @@
             QuickEditorAssetPostprocessorWatch.OnPostprocessAllAssetsEvent += OnPostprocessAllAssets;
         }
 
-        private static void OnPostprocessAllAssets(
-            String[] importedAssets,
-            String[] deletedAssets,
-            String[] movedAssets,
-            String[] movedFromAssetPaths)
+        private static void OnPostprocessAllAssets(String[] importedAssets, String[] deletedAssets, String[] movedAssets, String[] movedFromAssetPaths)
         {
-            List<string> importedKeys = new List<string>() { "Assets/Script", "Editor" };
+            List<string> importedKeys = new List<string>() { "Assets/Scripts", "Editor" };
             for (int i = 0; i < importedAssets.Length; i++)
             {
                 for (int j = 0; j < importedKeys.Count; j++)

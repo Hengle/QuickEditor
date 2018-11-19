@@ -7,11 +7,11 @@
 
     //在project界面按alt显示文件后缀名
     [InitializeOnLoad]
-    public static class QuickEditorProjectWindowWatch
+    public static class QuickUnityEditorProjectWindowWatch
     {
-        static QuickEditorProjectWindowWatch()
+        static QuickUnityEditorProjectWindowWatch()
         {
-            QuickEditorEventWatch.OnProjectWindowItemCallback += ProjectWindowItemOnGUI;
+            QuickUnityEditorEventWatch.OnProjectWindowItemCallback += ProjectWindowItemOnGUI;
         }
 
         private static void ProjectWindowItemOnGUI(string guid, Rect rect)

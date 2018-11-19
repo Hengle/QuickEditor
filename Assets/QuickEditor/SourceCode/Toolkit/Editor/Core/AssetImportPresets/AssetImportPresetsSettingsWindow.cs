@@ -24,6 +24,17 @@
         [MenuItem(AssetImportPresetsNodeName, false, AssetImportPresetsNodePriority)]
         private static void Init()
         {
+            if (Application.isPlaying || EditorApplication.isPlaying || EditorApplication.isPaused)
+            {
+                EditorUtility.DisplayDialog("错误", "游戏正在运行或者暂定, 请不要操作!", "确定");
+                return;
+            }
+
+            if (EditorApplication.isCompiling)
+            {
+                EditorUtility.DisplayDialog("错误", "游戏脚本正在编译, 请不要操作!", "确定");
+                return;
+            }
             WindowTitle = "Asset Import Presets Configuration";
             var window = GetEditorWindow<AssetImportPresetsSettingsWindow>();
             Undo.undoRedoPerformed += () =>
