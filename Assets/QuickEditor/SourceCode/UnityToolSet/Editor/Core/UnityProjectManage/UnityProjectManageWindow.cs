@@ -1,12 +1,12 @@
 ﻿namespace QuickEditor.UnityToolSet
 {
-    using QuickEditor.Common;
+    using QuickEditor.Core;
     using System.Collections.Generic;
     using System.Linq;
     using UnityEditor;
     using UnityEngine;
 
-    public class UnityProjectManageWindow : QEditorWindow
+    public class UnityProjectManageWindow : QuickEditorWindow
     {
         internal const int UnityProjectManageNodePriority = 200;
         internal const string UnityProjectManageNodeName = UnityToolSetConstants.UnityToolSetRootNodeName + "Unity Project Manage";

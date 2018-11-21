@@ -8,7 +8,7 @@
     public class ScriptGeneratorToolbar
     {
         private const int ScriptGeneratorNodePriority = 5000;
-        private const string ScriptGeneratorNodeName = QToolkitConstants.ToolkitRootNodeName + "Script Generator Toolbar/";
+        private const string ScriptGeneratorNodeName = QuickToolkitConstants.ToolkitRootNodeName + "Script Generator Toolbar/";
 
         [MenuItem(ScriptGeneratorNodeName + "New Script...", false, ScriptGeneratorNodePriority)]
         public static void OpenFromComponentMenu()

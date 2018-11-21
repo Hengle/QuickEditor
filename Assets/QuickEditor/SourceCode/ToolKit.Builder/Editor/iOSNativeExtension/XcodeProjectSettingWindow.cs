@@ -1,6 +1,6 @@
 ﻿namespace QuickEditor.Builder
 {
-    using QuickEditor.Common;
+    using QuickEditor.Core;
     using System;
     using System.Collections;
     using UnityEditor;
@@ -42,12 +42,12 @@
         protected override void DrawLeftRect()
         {
             base.DrawLeftRect();
-            QEditorGUIStaticAPI.Toggle("EnableBitCode", ref mCurrentSetting.EnableBitCode);
-            QEditorGUIStaticAPI.Toggle("EnableUIStatusBar", ref mCurrentSetting.EnableUIStatusBar);
-            QEditorGUIStaticAPI.Toggle("DeleteLaunchImages", ref mCurrentSetting.DeleteLaunchImages);
-            QEditorGUIStaticAPI.Toggle("NSAppTransportSecurity", ref mCurrentSetting.NSAppTransportSecurity);
+            QuickEditorGUIStaticAPI.Toggle("EnableBitCode", ref mCurrentSetting.EnableBitCode);
+            QuickEditorGUIStaticAPI.Toggle("EnableUIStatusBar", ref mCurrentSetting.EnableUIStatusBar);
+            QuickEditorGUIStaticAPI.Toggle("DeleteLaunchImages", ref mCurrentSetting.DeleteLaunchImages);
+            QuickEditorGUIStaticAPI.Toggle("NSAppTransportSecurity", ref mCurrentSetting.NSAppTransportSecurity);
 
-            QEditorGUIStaticAPI.DoReorderableList<XcodeProjectSetting>(mCurrentSetting, mCurrentSetting.XcodeSettingsList, typeof(XcodeProjectConfig), ref mReorderableList, ref mReorderableScrollPosition, ref mSettingsScrollPosition, (Rect rect, int index, bool isActive, bool isFocused) =>
+            QuickEditorGUIStaticAPI.DoReorderableList<XcodeProjectSetting>(mCurrentSetting, mCurrentSetting.XcodeSettingsList, typeof(XcodeProjectConfig), ref mReorderableList, ref mReorderableScrollPosition, ref mSettingsScrollPosition, (Rect rect, int index, bool isActive, bool isFocused) =>
             {
                 var elem = (AbstractXcodeConfig)mCurrentSetting.XcodeSettingsList[index];
                 GUI.Label(rect, elem.SaveName);
@@ -94,10 +94,10 @@
                     elem.Enabled = GUI.Toggle(rect, elem.Enabled, string.Empty);
                 };
             }
-            QEditorGUIStaticAPI.Space();
-            using (new QEditorGUILayout.HorizontalBlock())
+            QuickEditorGUIStaticAPI.Space();
+            using (new QuickEditorGUILayout.HorizontalBlock())
             {
-                QEditorGUIStaticAPI.Space();
+                QuickEditorGUIStaticAPI.Space();
                 if (GUILayout.Button(EditorGUIUtility.FindTexture("d_Toolbar Plus"), GUIStyle.none, GUILayout.Width(16)))
                 {
                     list.Add(Activator.CreateInstance(listType));
@@ -105,7 +105,7 @@
                     mReorderableList.GrabKeyboardFocus();
                     mSettingsScrollPosition.y = float.MaxValue;
                 }
-                QEditorGUIStaticAPI.Space();
+                QuickEditorGUIStaticAPI.Space();
                 if (GUILayout.Button(EditorGUIUtility.FindTexture("d_Toolbar Minus"), GUIStyle.none, GUILayout.Width(16)))
                 {
                     if (mReorderableList.index >= 0 && mReorderableList.index <= list.Count - 1)
@@ -116,15 +116,15 @@
                         mReorderableList.GrabKeyboardFocus();
                     }
                 }
-                QEditorGUIStaticAPI.FlexibleSpace();
-                QEditorGUIStaticAPI.Button("Disable.All", EditorStyles.miniButtonLeft, () =>
+                QuickEditorGUIStaticAPI.FlexibleSpace();
+                QuickEditorGUIStaticAPI.Button("Disable.All", EditorStyles.miniButtonLeft, () =>
                 {
                     for (int i = 0; i < list.Count; i++)
                     {
                         ((AbstractXcodeConfig)list[i]).Enabled = false;
                     }
                 });
-                QEditorGUIStaticAPI.Button("Enable.All", EditorStyles.miniButtonRight, () =>
+                QuickEditorGUIStaticAPI.Button("Enable.All", EditorStyles.miniButtonRight, () =>
                 {
                     for (int i = 0; i < list.Count; i++)
                     {
@@ -133,8 +133,8 @@
                 });
             }
 
-            QEditorGUIStaticAPI.Space();
-            QEditorGUIStaticAPI.DrawRect(EditorGUILayout.GetControlRect(false, 2), QEditorColors.DarkGrayX11);
+            QuickEditorGUIStaticAPI.Space();
+            QuickEditorGUIStaticAPI.DrawRect(EditorGUILayout.GetControlRect(false, 2), QuickEditorColors.DarkGrayX11);
 
             using (var scroll = new EditorGUILayout.ScrollViewScope(mReorderableScrollPosition))
             {

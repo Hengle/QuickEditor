@@ -1,6 +1,6 @@
 ﻿namespace QuickEditor.Toolkit
 {
-    using QuickEditor.Common;
+    using QuickEditor.Core;
     using UnityEditor;
     using UnityEngine;
 

@@ -1,6 +1,6 @@
 ﻿namespace QuickEditor.ToolKit.SVN
 {
-    using QuickEditor.Common;
+    using QuickEditor.Core;
     using System.Collections.Generic;
     using UnityEditor;
     using UnityEngine;
@@ -181,13 +181,13 @@
         {
             get
             {
-                return QEditorPathStaticAPI.ProjectPath;
+                return QuickEditorPathStaticAPI.ProjectPath;
             }
         }
 
         public static void ProcessCommand(string command, string argument)
         {
-            QProcessStaticAPI.ExecuteTortoiseSVNCommand(argument);
+            QuickProcessStaticAPI.ExecuteTortoiseSVNCommand(argument);
         }
     }
 }

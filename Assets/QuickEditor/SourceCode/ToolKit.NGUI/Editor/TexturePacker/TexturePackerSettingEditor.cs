@@ -1,6 +1,6 @@
 ﻿namespace QuickEditor.NGUIToolKit
 {
-    using QuickEditor.Common;
+    using QuickEditor.Core;
     using UnityEditor;
     using UnityEngine;
 
@@ -11,14 +11,14 @@
         {
             serializedObject.Update();
 
-            QEditorGUIStaticAPI.Space();
+            QuickEditorGUIStaticAPI.Space();
 
             var setting = (TexturePackerSetting)(serializedObject.targetObject);
 
-            QEditorGUIStaticAPI.FileTextField("TPCommand", ref setting.TPCommand, "Select TexturePacker Path", "exe");
-            QEditorGUIStaticAPI.Space();
+            QuickEditorGUIStaticAPI.FileTextField("TPCommand", ref setting.TPCommand, "Select TexturePacker Path", "exe");
+            QuickEditorGUIStaticAPI.Space();
 
-            QEditorGUIStaticAPI.ToggleButton("IsSeperateRGBandAlpha", ref setting.IsSeperateRGBandAlpha);
+            QuickEditorGUIStaticAPI.ToggleButton("IsSeperateRGBandAlpha", ref setting.IsSeperateRGBandAlpha);
 
             if (GUI.changed)
             {

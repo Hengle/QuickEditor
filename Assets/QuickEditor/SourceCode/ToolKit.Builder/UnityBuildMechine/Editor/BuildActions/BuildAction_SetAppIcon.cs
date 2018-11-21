@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using QuickEditor.Common;
+using QuickEditor.Core;
 using UnityEditor;
 using UnityEngine;
 
@@ -35,7 +35,7 @@ namespace QuickEditor.Builder
                 Debug.LogError("Icon Not Found : " + Path);
                 return BuildState.Failure;
             }
-            QEditorStaticAPI.SetAppIcon(Group, Icon);
+            QuickEditorStaticAPI.SetAppIcon(Group, Icon);
 
             return BuildState.Success;
         }

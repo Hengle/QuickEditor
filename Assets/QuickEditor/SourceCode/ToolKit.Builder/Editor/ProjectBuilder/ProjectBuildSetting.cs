@@ -3,12 +3,12 @@
 /// </summary>
 namespace QuickEditor.Builder
 {
-    using QuickEditor.Common;
+    using QuickEditor.Core;
     using UnityEditor;
     using UnityEngine;
 
     [System.Serializable]
-    public class ProjectBuildSetting : QScriptableObject<ProjectBuildSetting>
+    public class ProjectBuildSetting : QuickScriptableObject<ProjectBuildSetting>
     {
         [Tooltip("Buid Application.")]
         public bool buildApplication = true;
@@ -28,8 +28,8 @@ namespace QuickEditor.Builder
         [Tooltip("Splash Screen Asset Path.")]
         public string splashScreenAssetPath;
 
-        public Texture2D Icon { get { return QEditorAssetStaticAPI.LoadAsset<Texture2D>(iconAssetPath); } }
-        public Texture2D SplashScreen { get { return QEditorAssetStaticAPI.LoadAsset<Texture2D>(splashScreenAssetPath); } }
+        public Texture2D Icon { get { return QuickEditorAssetStaticAPI.LoadAsset<Texture2D>(iconAssetPath); } }
+        public Texture2D SplashScreen { get { return QuickEditorAssetStaticAPI.LoadAsset<Texture2D>(splashScreenAssetPath); } }
         public string Version;
         public string BundleVersionCode;
         public string SplashScreenPath;

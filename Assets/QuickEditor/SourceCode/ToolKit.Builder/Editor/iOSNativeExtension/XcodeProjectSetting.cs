@@ -1,10 +1,10 @@
 ﻿namespace QuickEditor.Builder
 {
-    using QuickEditor.Common;
+    using QuickEditor.Core;
     using System.Collections.Generic;
     using UnityEngine;
 
-    public class XcodeProjectSetting : QScriptableObject<XcodeProjectSetting>
+    public class XcodeProjectSetting : QuickScriptableObject<XcodeProjectSetting>
     {
         [SerializeField]
         [HideInInspector]

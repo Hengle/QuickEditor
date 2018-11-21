@@ -1,6 +1,6 @@
 ﻿namespace QuickEditor.Builder
 {
-    using QuickEditor.Common;
+    using QuickEditor.Core;
     using UnityEditor;
 
     public class ProjectBuilderToolbar
@@ -52,12 +52,12 @@
 
         protected static void SetSplashScreens()
         {
-            QEditorStaticAPI.SetAppIcon(BuildTargetGroup.iOS, ProjectBuildSetting.Current.Icon);
-            QEditorStaticAPI.SetAppIcon(BuildTargetGroup.Android, ProjectBuildSetting.Current.Icon);
-            QEditorStaticAPI.SetAppIcon(BuildTargetGroup.Standalone, ProjectBuildSetting.Current.Icon);
-            QEditorStaticAPI.SetSplashScreen("androidSplashScreen", ProjectBuildSetting.Current.SplashScreen);
-            QEditorStaticAPI.SetSplashScreen("iOSLaunchScreenPortrait", ProjectBuildSetting.Current.SplashScreen);
-            QEditorStaticAPI.SetSplashScreen("iOSLaunchScreenLandscape", ProjectBuildSetting.Current.SplashScreen);
+            QuickEditorStaticAPI.SetAppIcon(BuildTargetGroup.iOS, ProjectBuildSetting.Current.Icon);
+            QuickEditorStaticAPI.SetAppIcon(BuildTargetGroup.Android, ProjectBuildSetting.Current.Icon);
+            QuickEditorStaticAPI.SetAppIcon(BuildTargetGroup.Standalone, ProjectBuildSetting.Current.Icon);
+            QuickEditorStaticAPI.SetSplashScreen("androidSplashScreen", ProjectBuildSetting.Current.SplashScreen);
+            QuickEditorStaticAPI.SetSplashScreen("iOSLaunchScreenPortrait", ProjectBuildSetting.Current.SplashScreen);
+            QuickEditorStaticAPI.SetSplashScreen("iOSLaunchScreenLandscape", ProjectBuildSetting.Current.SplashScreen);
         }
 
         private static string ResolveExtension(BuildTarget a_target)

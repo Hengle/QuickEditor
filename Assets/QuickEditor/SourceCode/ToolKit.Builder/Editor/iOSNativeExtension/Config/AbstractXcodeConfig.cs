@@ -1,6 +1,6 @@
 ﻿namespace QuickEditor.Builder
 {
-    using QuickEditor.Common;
+    using QuickEditor.Core;
     using UnityEditor;
     using UnityEngine;
 
@@ -17,7 +17,7 @@
         protected void DrawFilterGUI()
         {
             EditorGUILayout.LabelField("Xcode Project Setting", EditorStyles.boldLabel);
-            EditorGUI.DrawRect(EditorGUILayout.GetControlRect(false, 2), QEditorColors.DarkGrayX11);
+            EditorGUI.DrawRect(EditorGUILayout.GetControlRect(false, 2), QuickEditorColors.DarkGrayX11);
             GUILayout.Space(3);
 
             SaveName = EditorGUILayout.TextField(new GUIContent("Name", "Only used for organisation"), SaveName);

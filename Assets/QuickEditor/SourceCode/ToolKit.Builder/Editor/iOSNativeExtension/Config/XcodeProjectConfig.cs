@@ -1,7 +1,7 @@
 ﻿namespace QuickEditor.Builder
 {
-    using QuickEditor.Common;
-    using QuickEditor.Common.ReorderableList;
+    using QuickEditor.Core;
+    using QuickEditor.Core.ReorderableList;
     using System;
     using System.Collections.Generic;
     using UnityEngine;
@@ -81,29 +81,29 @@
         public override void DrawInnerGUI()
         {
             DrawFilterGUI();
-            QEditorGUIStaticAPI.DrawFoldableBlock(ref mFrameworksFoldout, "Frameworks", () =>
+            QuickEditorGUIStaticAPI.DrawFoldableBlock(ref mFrameworksFoldout, "Frameworks", () =>
             {
                 ReorderableListGUI.ListField(Frameworks, DrawFramework, 32, ReorderableListFlags.DisableAutoFocus);
             });
 
-            QEditorGUIStaticAPI.DrawFoldableBlock(ref mDependentFrameworksFoldout, "Dependent Frameworks", () =>
+            QuickEditorGUIStaticAPI.DrawFoldableBlock(ref mDependentFrameworksFoldout, "Dependent Frameworks", () =>
             {
                 ReorderableListGUI.ListField(DependentFrameworks, DrawFramework, 32, ReorderableListFlags.DisableAutoFocus);
             });
-            QEditorGUIStaticAPI.DrawFoldableBlock(ref mLibrarysFoldout, "Librarys", () =>
+            QuickEditorGUIStaticAPI.DrawFoldableBlock(ref mLibrarysFoldout, "Librarys", () =>
             {
                 ReorderableListGUI.ListField(Librarys, DrawLibrarys, 16, ReorderableListFlags.DisableAutoFocus);
             });
-            QEditorGUIStaticAPI.DrawFoldableBlock(ref mDependentLibrarysFoldout, "Dependent Librarys", () =>
+            QuickEditorGUIStaticAPI.DrawFoldableBlock(ref mDependentLibrarysFoldout, "Dependent Librarys", () =>
             {
                 ReorderableListGUI.ListField(DependentLibrarys, DrawLibrarys, 16, ReorderableListFlags.DisableAutoFocus);
             });
-            QEditorGUIStaticAPI.DrawFoldableBlock(ref mApplicationQueriesSchemesFoldout, "Application Queries Schemes", () =>
+            QuickEditorGUIStaticAPI.DrawFoldableBlock(ref mApplicationQueriesSchemesFoldout, "Application Queries Schemes", () =>
             {
                 ReorderableListGUI.ListField(ApplicationQueriesSchemes, DrawApplicationQueriesSchemes, 16, ReorderableListFlags.DisableAutoFocus);
             });
 
-            QEditorGUIStaticAPI.DrawFoldableBlock(ref mBuildPropertysFoldout, "Build Propertys", () =>
+            QuickEditorGUIStaticAPI.DrawFoldableBlock(ref mBuildPropertysFoldout, "Build Propertys", () =>
             {
                 ReorderableListGUI.ListField(BuildPropertys, DrawBuildPropertys, 36, ReorderableListFlags.DisableAutoFocus);
             });
@@ -123,8 +123,8 @@
             rightUpper.xMin = leftUpper.xMax + 2;
             rightUpper.yMax = rightUpper.yMin + rowHeight;
             if (entry == null) { entry = new Library { File = string.Empty }; }
-            QEditorGUIStaticAPI.Label(leftUpper, "File");
-            QEditorGUIStaticAPI.FileTextField(rightUpper, entry.File, ref entry.File, "Select Librarys", "png");
+            QuickEditorGUIStaticAPI.Label(leftUpper, "File");
+            QuickEditorGUIStaticAPI.FileTextField(rightUpper, entry.File, ref entry.File, "Select Librarys", "png");
             return entry;
         }
 
@@ -153,13 +153,13 @@
 
             if (entry == null) { entry = new BuildProperty { Name = string.Empty, Value = string.Empty }; }
 
-            QEditorGUIStaticAPI.Label(leftUpper, "Name");
-            QEditorGUIStaticAPI.Label(leftLower, "Value");
+            QuickEditorGUIStaticAPI.Label(leftUpper, "Name");
+            QuickEditorGUIStaticAPI.Label(leftLower, "Value");
 
             if (entry.Name == null) { entry.Name = string.Empty; }
 
-            QEditorGUIStaticAPI.TextField(rightUpper, ref entry.Name);
-            QEditorGUIStaticAPI.TextField(rightLower, ref entry.Value);
+            QuickEditorGUIStaticAPI.TextField(rightUpper, ref entry.Name);
+            QuickEditorGUIStaticAPI.TextField(rightLower, ref entry.Value);
 
             return entry;
         }
@@ -178,8 +178,8 @@
             rightUpper.xMin = leftUpper.xMax + 2;
             rightUpper.yMax = rightUpper.yMin + rowHeight;
 
-            QEditorGUIStaticAPI.Label(leftUpper, "Value");
-            QEditorGUIStaticAPI.TextField(rightUpper, ref entry);
+            QuickEditorGUIStaticAPI.Label(leftUpper, "Value");
+            QuickEditorGUIStaticAPI.TextField(rightUpper, ref entry);
 
             return entry;
         }
@@ -209,12 +209,12 @@
 
             if (entry == null) { entry = new Framework { Path = "", Status = FrameworkStatus.Optional }; }
 
-            QEditorGUIStaticAPI.Label(leftUpper, "Path");
-            QEditorGUIStaticAPI.Label(leftLower, "Status");
+            QuickEditorGUIStaticAPI.Label(leftUpper, "Path");
+            QuickEditorGUIStaticAPI.Label(leftLower, "Status");
 
             if (entry.Path == null) { entry.Path = string.Empty; }
-            QEditorGUIStaticAPI.FileTextField(rightUpper, entry.Path, ref entry.Path, "Select Framework", "png");
-            QEditorGUIStaticAPI.EnumPopup(rightLower, entry.Status, ref entry.Status);
+            QuickEditorGUIStaticAPI.FileTextField(rightUpper, entry.Path, ref entry.Path, "Select Framework", "png");
+            QuickEditorGUIStaticAPI.EnumPopup(rightLower, entry.Status, ref entry.Status);
             return entry;
         }
     }

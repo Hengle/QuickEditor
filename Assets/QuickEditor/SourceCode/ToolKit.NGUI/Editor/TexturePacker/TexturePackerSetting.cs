@@ -1,6 +1,6 @@
 ﻿namespace QuickEditor.NGUIToolKit
 {
-    using QuickEditor.Common;
+    using QuickEditor.Core;
     using UnityEngine;
 
     public class TexturePackerSetting : ScriptableObject
@@ -17,7 +17,7 @@
             {
                 if (settings == null)
                 {
-                    settings = QEditorAssetStaticAPI.LoadOrCreateAssetFromFindAssets<TexturePackerSetting>(false);
+                    settings = QuickEditorAssetStaticAPI.LoadOrCreateAssetFromFindAssets<TexturePackerSetting>(false);
                 }
                 return settings;
             }

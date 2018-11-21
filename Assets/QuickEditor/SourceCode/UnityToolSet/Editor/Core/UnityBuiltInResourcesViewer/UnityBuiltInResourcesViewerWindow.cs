@@ -1,12 +1,12 @@
 ﻿namespace QuickEditor.UnityToolSet
 {
-    using QuickEditor.Common;
+    using QuickEditor.Core;
     using System.Collections.Generic;
     using System.Reflection;
     using UnityEditor;
     using UnityEngine;
 
-    public class UnityBuiltInResourcesViewerWindow : QEditorWindow
+    public class UnityBuiltInResourcesViewerWindow : QuickEditorWindow
     {
         internal const int BuiltInResourcesViewerNodePriority = 100;
         internal const string BuiltInResourcesViewerNodeName = UnityToolSetConstants.UnityToolSetRootNodeName + "Built-in Resources Viewer";
@@ -57,7 +57,7 @@
 
         protected override void OnGUI()
         {
-            QEditorGUIStaticAPI.Toolbar(ref mSelectedTabIndex, mTabsText, EditorStyles.toolbarButton);
+            QuickEditorGUIStaticAPI.Toolbar(ref mSelectedTabIndex, mTabsText, EditorStyles.toolbarButton);
             GUILayout.BeginHorizontal("HelpBox");
 
             GUILayout.Label("Click a Sample to copy its Name to your Clipboard", "MiniBoldLabel");

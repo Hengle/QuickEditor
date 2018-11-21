@@ -3,7 +3,7 @@
 /// </summary>
 namespace QuickEditor.Builder
 {
-    using QuickEditor.Common;
+    using QuickEditor.Core;
     using UnityEditor;
     using UnityEngine;
 
@@ -59,16 +59,16 @@ namespace QuickEditor.Builder
         {
             base.DrawLeftRect();
             GUILayout.BeginHorizontal(EditorStyles.toolbar);
-            QEditorGUIStaticAPI.Toolbar(ref mSelectedTabIndex, mAssetTabsText, EditorStyles.toolbarButton);
+            QuickEditorGUIStaticAPI.Toolbar(ref mSelectedTabIndex, mAssetTabsText, EditorStyles.toolbarButton);
             GUILayout.EndHorizontal();
         }
 
         protected override void DrawRightRect()
         {
-            using (new QEditorGUILayout.ScrollViewBlock(ref mScrollPos))
+            using (new QuickEditorGUILayout.ScrollViewBlock(ref mScrollPos))
             {
                 DrawOnekeyPackGeneralSettings(mAppBuildSetting);
-                using (new QEditorGUILayout.IndentBlock())
+                using (new QuickEditorGUILayout.IndentBlock())
                 {
                     DrawOnekeyPackAndroidSettings(mAppBuildSetting);
                 }
@@ -85,28 +85,28 @@ namespace QuickEditor.Builder
 
         private void DrawOnekeyPackGeneralSettings(ProjectBuildSetting settings)
         {
-            QEditorGUIStaticAPI.DrawFoldableBlock(ref mGeneralSettingsFoldout, "Application Build Setting", () =>
+            QuickEditorGUIStaticAPI.DrawFoldableBlock(ref mGeneralSettingsFoldout, "Application Build Setting", () =>
             {
-                QEditorGUIStaticAPI.DragAndDropTextField("name", ref settings.productName);
+                QuickEditorGUIStaticAPI.DragAndDropTextField("name", ref settings.productName);
 
-                QEditorGUIStaticAPI.TextField("Product Name", ref settings.productName);
-                QEditorGUIStaticAPI.TextField("Company Name", ref settings.companyName);
-                QEditorGUIStaticAPI.TextField("Bundle Identifier", ref settings.applicationIdentifier);
+                QuickEditorGUIStaticAPI.TextField("Product Name", ref settings.productName);
+                QuickEditorGUIStaticAPI.TextField("Company Name", ref settings.companyName);
+                QuickEditorGUIStaticAPI.TextField("Bundle Identifier", ref settings.applicationIdentifier);
 
-                QEditorGUIStaticAPI.TextField("Version", ref settings.Version);
-                QEditorGUIStaticAPI.TextField("Bundle Version Code", ref settings.BundleVersionCode);
-                QEditorGUIStaticAPI.FileTextField("splashScreenAssetPath", ref settings.splashScreenAssetPath, "选择文件", "png");
-                QEditorGUIStaticAPI.FileTextField("iconAssetPath", ref settings.iconAssetPath, "选择文件", "png");
+                QuickEditorGUIStaticAPI.TextField("Version", ref settings.Version);
+                QuickEditorGUIStaticAPI.TextField("Bundle Version Code", ref settings.BundleVersionCode);
+                QuickEditorGUIStaticAPI.FileTextField("splashScreenAssetPath", ref settings.splashScreenAssetPath, "选择文件", "png");
+                QuickEditorGUIStaticAPI.FileTextField("iconAssetPath", ref settings.iconAssetPath, "选择文件", "png");
             });
         }
 
         private void DrawOnekeyPackAndroidSettings(ProjectBuildSetting settings)
         {
-            QEditorGUIStaticAPI.DrawFoldableBlock(ref mAndroidSettingsFoldout, "Android Setting", () =>
+            QuickEditorGUIStaticAPI.DrawFoldableBlock(ref mAndroidSettingsFoldout, "Android Setting", () =>
             {
-                QEditorGUIStaticAPI.FileTextField("KeystoreName", ref settings.AndroidKeystoreName, "选择文件", "keystore");
+                QuickEditorGUIStaticAPI.FileTextField("KeystoreName", ref settings.AndroidKeystoreName, "选择文件", "keystore");
 
-                QEditorGUIStaticAPI.TextField("KeystorePass", ref settings.AndroidKeystorePass);
+                QuickEditorGUIStaticAPI.TextField("KeystorePass", ref settings.AndroidKeystorePass);
                 settings.AndroidKeystorePass = EditorGUILayout.TextField("KeystorePass", settings.AndroidKeystorePass);
                 settings.AndroidKeyaliasName = EditorGUILayout.TextField("KeyaliasName", settings.AndroidKeyaliasName);
                 settings.AndroidKeyaliasPass = EditorGUILayout.TextField("KeyaliasPass", settings.AndroidKeyaliasPass);
@@ -120,7 +120,7 @@ namespace QuickEditor.Builder
 
         private void DrawOnekeyPackIOSSettings(ProjectBuildSetting settings)
         {
-            QEditorGUIStaticAPI.DrawFoldableBlock(ref mIOSSettingsFoldout, "IOS Setting", () =>
+            QuickEditorGUIStaticAPI.DrawFoldableBlock(ref mIOSSettingsFoldout, "IOS Setting", () =>
             {
                 settings.iOSScriptingBackend = (ScriptingImplementation)EditorGUILayout.EnumPopup("Scripting Backend", settings.iOSScriptingBackend);
                 settings.iOSTargetDevice = (iOSTargetDevice)EditorGUILayout.EnumPopup("Target Device", settings.iOSTargetDevice);
@@ -131,13 +131,13 @@ namespace QuickEditor.Builder
         private void DrawOnekeyPackMenus(ProjectBuildSetting mOnekeyPackSettings)
         {
             EditorGUILayout.Space();
-            using (new QEditorGUILayout.HorizontalBlock())
+            using (new QuickEditorGUILayout.HorizontalBlock())
             {
                 //if (GUILayout.Button("Reset"))
                 //{
                 //    mOnekeyPackSettings.ApplyDefaults();
                 //}
-                QEditorGUIStaticAPI.Button(new GUIContent("Apply Setting", EditorGUIUtility.FindTexture("vcs_check")), mOnekeyPackSettings.ApplyDefaults);
+                QuickEditorGUIStaticAPI.Button(new GUIContent("Apply Setting", EditorGUIUtility.FindTexture("vcs_check")), mOnekeyPackSettings.ApplyDefaults);
 
                 if (GUILayout.Button(new GUIContent("Apply Setting", EditorGUIUtility.FindTexture("vcs_check"))))
                 {
