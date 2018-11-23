@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Name: AssetImportPresetsSettings
   m_EditorClassIdentifier: 
   MeshImportSettings:
-  - tagForDeletion: 0
-    positionOffset: 0
-    saveName: New Preset
-    pathNameFilter: 
-    fileNameFilter: 
-    isEnabled: 1
+  - TagForDeletion: 0
+    PositionOffset: 0
+    SaveName: New Preset
+    PathNameFilter: 
+    FileNameFilter: 
+    IsEnabled: 1
     ScaleFactor: 0
     MeshCompression: 0
     ReadWriteEnabled: 0
@@ -44,12 +44,12 @@ MonoBehaviour:
     ImportLights: 0
     WeldVertices: 0
   AudioImportSettings:
-  - tagForDeletion: 0
-    positionOffset: 0
-    saveName: New Preset
-    pathNameFilter: 
-    fileNameFilter: 
-    isEnabled: 1
+  - TagForDeletion: 0
+    PositionOffset: 0
+    SaveName: New Preset
+    PathNameFilter: 
+    FileNameFilter: 
+    IsEnabled: 1
     m_audioCompressionFormat: 0
     m_AudioClipLoadType: 0
     m_audioQuality: 1
@@ -59,12 +59,12 @@ MonoBehaviour:
     m_loadInBackground: 0
     m_forceToMono: 0
   TextureImportSettings:
-  - tagForDeletion: 0
-    positionOffset: 0
-    saveName: New Preset
-    pathNameFilter: 
-    fileNameFilter: 
-    isEnabled: 1
+  - TagForDeletion: 0
+    PositionOffset: 0
+    SaveName: New Preset
+    PathNameFilter: 
+    FileNameFilter: 
+    IsEnabled: 1
     TextureType: 0
     TextureShape: 1
     GenerateCubemap: 0
@@ -101,12 +101,12 @@ MonoBehaviour:
     SpriteAlignment: 0
     SpritePivot: {x: 0, y: 0}
     LightType: 0
-  - tagForDeletion: 0
-    positionOffset: 0
-    saveName: New Preset
-    pathNameFilter: 
-    fileNameFilter: 
-    isEnabled: 1
+  - TagForDeletion: 0
+    PositionOffset: 0
+    SaveName: New Preset
+    PathNameFilter: 
+    FileNameFilter: 
+    IsEnabled: 1
     TextureType: 0
     TextureShape: 1
     GenerateCubemap: 0
@@ -143,12 +143,12 @@ MonoBehaviour:
     SpriteAlignment: 0
     SpritePivot: {x: 0, y: 0}
     LightType: 0
-  - tagForDeletion: 0
-    positionOffset: 0
-    saveName: New Preset
-    pathNameFilter: 
-    fileNameFilter: 
-    isEnabled: 1
+  - TagForDeletion: 0
+    PositionOffset: 0
+    SaveName: New Preset
+    PathNameFilter: 
+    FileNameFilter: 
+    IsEnabled: 1
     TextureType: 0
     TextureShape: 1
     GenerateCubemap: 0
