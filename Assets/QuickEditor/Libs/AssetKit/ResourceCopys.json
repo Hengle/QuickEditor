@@ -1,0 +1,107 @@
+﻿{
+  "ui_images": [
+    [ "dir", "Art/UI/yejiawen/avg/", "/Res/UIImage/AVG/" ],
+    [ "dir", "Art/UI/yejiawen/Battle/", "/Res/UIImage/Battle/" ],
+    [ "dir", "Art/UI/yejiawen/Book/", "/Res/UIImage/Book/" ],
+    [ "dir", "Art/UI/yejiawen/common/", "/Res/UIImage/Common/" ],
+    [ "dir", "Art/UI/yejiawen/Cook/", "/Res/UIImage/Cook/" ],
+    [ "dir", "Art/UI/yejiawen/Gift/", "/Res/UIImage/Gift/" ],
+    [ "dir", "Art/UI/yejiawen/Guide/", "/Res/UIImage/Guide/" ],
+    [ "dir", "Art/UI/yejiawen/home/", "/Res/UIImage/Home/" ],
+    [ "dir", "Art/UI/yejiawen/Login/", "/Res/UIImage/Login/" ],
+    [ "dir", "Art/UI/yejiawen/Lottery/", "/Res/UIImage/Lottery/" ],
+    [ "dir", "Art/UI/yejiawen/PlayerInfo/", "/Res/UIImage/PlayerInfo/" ],
+    [ "dir", "Art/UI/yejiawen/Quest/", "/Res/UIImage/Quest/" ],
+    [ "dir", "Art/UI/yejiawen/RoleInfo/", "/Res/UIImage/RoleInfo/" ],
+    [ "dir", "Art/UI/yejiawen/Store/", "/Res/UIImage/Store/" ],
+    [ "dir", "Art/UI/yejiawen/Story/", "/Res/UIImage/Story/" ],
+    [ "dir", "Art/UI/yejiawen/TalkList/", "/Res/UIImage/TalkList/" ],
+    [ "dir", "Art/UI/yejiawen/Team/", "/Res/UIImage/Team/" ],
+    [ "dir", "Art/UI/yejiawen/Town/", "/Res/UIImage/Town/" ]
+  ],
+  "bg": [
+    [ "dir", "Art/UI/yejiawen/bg/avgbg/", "/Res/UIImage/BG_AVG/" ],
+    [ "dir", "Art/UI/yejiawen/bg/battle/", "/Res/UIImage/BG_Battles/" ],
+    [ "dir", "Art/UI/yejiawen/bg/events/", "/Res/UIImage/BG_LoginBonus/" ],
+    [ "dir", "Art/UI/yejiawen/bg/loading/", "/Res/UIImage/BG_Loading/" ],
+    [ "dir", "Art/UI/yejiawen/bg/map/", "/Res/UIImage/BG_Maps/" ],
+    [ "dir", "Art/UI/yejiawen/bg/ui/", "/Res/UIImage/BG_UI/" ]
+  ],
+  "cg": [
+    [ "dir", "Art/waibao/CG/JPG/", "/Res/UIImage/BG_CG/" ]
+  ],
+  "icon": [
+    [ "dir", "Art/UI/yejiawen/icon/bookchara/", "/Res/UIImage/Book/" ],
+    [ "dir", "Art/UI/yejiawen/icon/bookmap/", "/Res/UIImage/Book/" ],
+    [ "dir", "Art/UI/yejiawen/icon/buff/", "/Res/UIImage/Buff/" ],
+    [ "dir", "Art/UI/yejiawen/icon/jianzhu/building/roads/", "/Res/UIImage/Building/Road/" ],
+    [ "dir", "Art/UI/yejiawen/icon/jianzhu/building/tiles/", "/Res/UIImage/Building/Tiles/" ],
+    [ "dir", "Art/UI/yejiawen/icon/jianzhu/building/buildings/", "/Res/UIImage/Building/Building/" ],
+    [ "dir", "Art/UI/yejiawen/icon/jianzhu/icon/", "/Res/UIImage/BuildingIcon/" ],
+    [ "dir", "Art/UI/yejiawen/icon/character/", "/Res/UIImage/Character/" ],
+    [ "dir", "Art/UI/yejiawen/icon/Element/", "/Res/UIImage/Element/" ],
+    [ "dir", "Art/UI/yejiawen/icon/biaoqing/", "/Res/UIImage/Emote/" ],
+    [ "dir", "Art/UI/yejiawen/icon/head_avg/", "/Res/UIImage/Head/" ],
+    [ "dir", "Art/UI/yejiawen/icon/head_guai/", "/Res/UIImage/Head/" ],
+    [ "dir", "Art/UI/yejiawen/icon/head_Q/", "/Res/UIImage/Head/" ],
+    [ "dir", "Art/UI/yejiawen/icon/item/", "/Res/UIImage/Item/" ],
+    [ "dir", "Art/UI/yejiawen/icon/item_big/", "/Res/UIImage/Item/" ],
+    [ "dir", "Art/UI/yejiawen/icon/map/", "/Res/UIImage/Maps/" ],
+    [ "dir", "Art/UI/yejiawen/icon/kachi/", "/Res/UIImage/Lottery/" ],
+    [ "dir", "Art/UI/yejiawen/icon/memory/", "/Res/UIImage/MemoryIcon/" ],
+    [ "dir", "Art/UI/yejiawen/icon/Other/", "/Res/UIImage/Other/" ],
+    [ "dir", "Art/UI/yejiawen/icon/Rarity/", "/Res/UIImage/Rarity/" ],
+    [ "dir", "Art/UI/yejiawen/icon/skill/", "/Res/UIImage/Skill/" ],
+    [ "dir", "Art/UI/yejiawen/icon/skill_s/", "/Res/UIImage/Skill/" ],
+    [ "dir", "Art/UI/yejiawen/icon/pifu/", "/Res/UIImage/Skin/" ],
+    [ "dir", "Art/UI/yejiawen/icon/trump/", "/Res/UIImage/Trump/" ],
+    [ "dir", "Art/UI/yejiawen/icon/trump_big/", "/Res/UIImage/Trump/" ],
+    [ "dir", "Art/UI/yejiawen/icon/boss/", "/Res/UIImage/Boss/" ],
+    [ "dir", "Art/UI/yejiawen/icon/login_bonus/", "/Res/UIImage/BG_LoginBonus/" ],
+    [ "dir", "Art/UI/yejiawen/icon/autoexplore/", "/Res/UIImage/AutoExplore/" ]
+  ],
+  "config": [
+    [ "file", "Tool/BYXQtTool/bin/character_position.json", "/Editor/BuildBundles/Resources/Config/character_position.json" ],
+    [ "file", "Tool/BYXQtTool/bin/jianzhu_position.json", "/Editor/BuildBundles/Resources/Config/jianzhu_position.json" ],
+    [ "file", "Tool/BYXQtTool/bin/byx_map.json", "/Editor/BuildBundles/Resources/Config/byx_map.json" ]
+  ],
+  "excel": {
+  "t2144":[ "excel", "Design/output_excel/2144/", "/Editor/BuildBundles/Resources/Config/", "/Scripts/Config/", "/Scripts/ConfigExtra/" ],
+  "banshu":[ "excel", "Design/output_excel/banshu/", "/Editor/BuildBundles/Resources/Config/", "/Scripts/Config/", "/Scripts/ConfigExtra/" ],
+  "design_test":[ "excel", "Design/output_excel/design_test/", "/Editor/BuildBundles/Resources/Config/", "/Scripts/Config/", "/Scripts/ConfigExtra/" ],
+  "shangwu":[ "excel", "Design/output_excel/shangwu/", "/Editor/BuildBundles/Resources/Config/", "/Scripts/Config/", "/Scripts/ConfigExtra/" ],
+  "test_in_1":[ "excel", "Design/output_excel/test_in_1/", "/Editor/BuildBundles/Resources/Config/", "/Scripts/Config/", "/Scripts/ConfigExtra/" ],
+  "test_out_1":[ "excel", "Design/output_excel/test_out_1/", "/Editor/BuildBundles/Resources/Config/", "/Scripts/Config/", "/Scripts/ConfigExtra/" ]
+  },
+  "spine": [
+    [ "dir", "Art/spine/SpineOutput/", "/Editor/BuildBundles/Resources/Spine/" ],
+    [ "dir", "Art/building/spine/", "/Editor/BuildBundles/Resources/Spine/" ]
+  ],
+  "live2d": [
+    [ "dir", "Art/Live2D/GAO/LIVE2D3.0/", "/Editor/BuildBundles/Resources/Live2D/" ]
+  ],
+  "story": [
+    [ "dir", "Tool/StorageToolZongDie/output/", "/Editor/BuildBundles/Resources/Scenario/" ]
+  ],
+  "sound": [
+    [ "dir", "Sound/bgm/MP3/module/", "/Editor/BuildBundles/Resources/Sound/bgm/" ],
+    [ "dir", "Sound/bgm/MP3/story/", "/Editor/BuildBundles/Resources/Sound/bgm/" ],
+    [ "dir", "Sound/se/", "/Editor/BuildBundles/Resources/Sound/effect/" ],
+    [ "dir", "Sound/se_avg/", "/Editor/BuildBundles/Resources/Sound/effect/" ],
+    [ "dir", "Sound/se_new/", "/Editor/BuildBundles/Resources/Sound/effect/" ]
+  ],
+  "effect": [
+    [ "dir_ignoremeta", "Tool/SpineTest/Assets/CKtest/prefab/Daivs/", "/Editor/BuildBundles/Resources/Effects/" ],
+    [ "dir_ignoremeta", "Tool/SpineTest/Assets/CKtest/prefab/Common/", "/Editor/BuildBundles/Resources/Effects/" ],
+    [ "dir_ignoremeta", "Tool/SpineTest/Assets/CKtest/prefab/Faqi/", "/Editor/BuildBundles/Resources/Effects/" ],
+    [ "dir_single_ignoremeta", "Tool/SpineTest/Assets/CKtest/prefab/Monster/", "/Editor/BuildBundles/Resources/Effects/" ],
+    [ "dir_ignoremeta", "Tool/SpineTest/Assets/CKtest/prefab/Player/", "/Editor/BuildBundles/Resources/Effects/" ],
+    [ "dir_ignoremeta", "Tool/SpineTest/Assets/CKtest/prefab/UI_Effect/", "/Editor/BuildBundles/Resources/Effects/" ],
+    [ "dir_ignoremeta", "Tool/SpineTest/Assets/CKtest/animation/", "/Res/Effects/animation/" ],
+    [ "dir_ignoremeta", "Tool/SpineTest/Assets/CKtest/materials/", "/Res/Effects/materials/" ],
+    [ "dir_ignoremeta", "Tool/SpineTest/Assets/CKtest/model/", "/Res/Effects/model/" ],
+    [ "dir_ignoremeta", "Tool/SpineTest/Assets/CKtest/shader/", "/Res/Effects/shader/" ],
+    [ "dir_ignoremeta", "Tool/SpineTest/Assets/CKtest/texture/", "/Res/Effects/texture/" ],
+    [ "dir_ignoremeta", "Tool/SpineTest/Assets/CKtest/other/", "/Res/Effects/other/" ]
+  ]
+}
