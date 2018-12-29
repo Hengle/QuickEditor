@@ -43,6 +43,130 @@ MonoBehaviour:
     ImportVisibility: 0
     ImportLights: 0
     WeldVertices: 0
+  - TagForDeletion: 0
+    PositionOffset: 0
+    SaveName: New Preset
+    PathNameFilter: 
+    FileNameFilter: 
+    IsEnabled: 1
+    ScaleFactor: 0
+    MeshCompression: 0
+    ReadWriteEnabled: 0
+    OptimizeMesh: 0
+    ImportBlendShapes: 0
+    GenerateColliders: 0
+    KeepQuads: 0
+    SwapUVs: 0
+    GenerateLightmapUV: 0
+    LightmapHardAngle: 0
+    LightmapPadding: 0
+    LightmapAreaError: 0
+    LightmapAngleError: 0
+    ImportNormals: 0
+    SmoothingAngle: 0
+    TangentMode: 0
+    ImportMats: 0
+    MaterialNaming: 0
+    MaterialSearch: 0
+    ForceNoRig: 0
+    ImportAnim: 0
+    ImportCameras: 0
+    ImportVisibility: 0
+    ImportLights: 0
+    WeldVertices: 0
+  - TagForDeletion: 0
+    PositionOffset: 0
+    SaveName: New Preset
+    PathNameFilter: 
+    FileNameFilter: 
+    IsEnabled: 1
+    ScaleFactor: 0
+    MeshCompression: 0
+    ReadWriteEnabled: 0
+    OptimizeMesh: 0
+    ImportBlendShapes: 0
+    GenerateColliders: 0
+    KeepQuads: 0
+    SwapUVs: 0
+    GenerateLightmapUV: 0
+    LightmapHardAngle: 0
+    LightmapPadding: 0
+    LightmapAreaError: 0
+    LightmapAngleError: 0
+    ImportNormals: 0
+    SmoothingAngle: 0
+    TangentMode: 0
+    ImportMats: 0
+    MaterialNaming: 0
+    MaterialSearch: 0
+    ForceNoRig: 0
+    ImportAnim: 0
+    ImportCameras: 0
+    ImportVisibility: 0
+    ImportLights: 0
+    WeldVertices: 0
+  - TagForDeletion: 0
+    PositionOffset: 0
+    SaveName: New Preset
+    PathNameFilter: 
+    FileNameFilter: 
+    IsEnabled: 1
+    ScaleFactor: 0
+    MeshCompression: 0
+    ReadWriteEnabled: 0
+    OptimizeMesh: 0
+    ImportBlendShapes: 0
+    GenerateColliders: 0
+    KeepQuads: 0
+    SwapUVs: 0
+    GenerateLightmapUV: 0
+    LightmapHardAngle: 0
+    LightmapPadding: 0
+    LightmapAreaError: 0
+    LightmapAngleError: 0
+    ImportNormals: 0
+    SmoothingAngle: 0
+    TangentMode: 0
+    ImportMats: 0
+    MaterialNaming: 0
+    MaterialSearch: 0
+    ForceNoRig: 0
+    ImportAnim: 0
+    ImportCameras: 0
+    ImportVisibility: 0
+    ImportLights: 0
+    WeldVertices: 0
+  - TagForDeletion: 0
+    PositionOffset: 0
+    SaveName: New Preset
+    PathNameFilter: 
+    FileNameFilter: 
+    IsEnabled: 1
+    ScaleFactor: 0
+    MeshCompression: 0
+    ReadWriteEnabled: 0
+    OptimizeMesh: 0
+    ImportBlendShapes: 0
+    GenerateColliders: 0
+    KeepQuads: 0
+    SwapUVs: 0
+    GenerateLightmapUV: 0
+    LightmapHardAngle: 0
+    LightmapPadding: 0
+    LightmapAreaError: 0
+    LightmapAngleError: 0
+    ImportNormals: 0
+    SmoothingAngle: 0
+    TangentMode: 0
+    ImportMats: 0
+    MaterialNaming: 0
+    MaterialSearch: 0
+    ForceNoRig: 0
+    ImportAnim: 0
+    ImportCameras: 0
+    ImportVisibility: 0
+    ImportLights: 0
+    WeldVertices: 0
   AudioImportSettings:
   - TagForDeletion: 0
     PositionOffset: 0
